@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Unordered List</title>
+    </head>
+    <body>
+        
+        <h2>Unordered List</h2>
+
+        <!-- <ul> 요소: 순서가 없는 목록(unordered list)를 표현 --> 
+        <!-- <ul> 요소와 <ol> 요소에는 <li> 요소만 들어갈 수 있다! -->
+        <ul>
+            <!-- <li> 요소: 목록의 항목(list item)을 표현 -->
+            <li>Apple</li>
+            <li>Banana</li>
+            <li>Cherry</li>
+        </ul>
+
+        <hr>
+
+        <h2>Ordered List</h2>
+
+        <!-- <ol> 요소: 순서가 있는 목록(ordered list)을 표현 -->
+        <ol>
+            <li>Facebook</li>
+            <li>Twitter</li>
+            <li>Instagram</li>
+        </ol>
+
+        <hr>
+
+        <h2>Overlapped List</h2>
+
+        <!-- 중첩된 목록: 목록안에 목록이 들어가는 형태 -->
+        <ul>
+            <li>
+                HTMl
+                
+                <!-- 안쪽 목록은 바깥쪽 목록의 항목(<li> 요소)에 포함되는 목록이다. -->
+                <ol>
+                    <li>HTML Tags</li>
+                    <li>HTML Elements</li>
+                    <li>Structure and contents</li>
+                </ol>
+            </li>
+            <li>
+                CSS
+
+                <ol>
+                    <li>Style sheets</li>
+                    <li>CSS blocks</li>
+                </ol>
+            </li>
+            <li>JavaScript</li>
+        </ul>
+
+        <hr>
+
+        <h2>Definition list</h2>
+        <!-- <dl> 요소 -->
+        <dl>
+            <dt>HTML</dt>
+            <dd>HTML stands for Hyper Text Markup language</dd>
+            <dd>HTML is the standard markup language for Web pages.</dd>
+            <dd>HTML describes the structure of a Web page.</dd>
+
+            <dt>CSS</dt>
+            <dd>CSS is a language that describes the style of an HTML document.</dd>
+            <dd>CSS describes how HTML elements should be displayed.</dd>
+        </dl>
+
+        <hr>
+
+        <h2>Table</h2>
+
+        <!-- <table> 요소: 표(table)을 표현 -->
+        <!-- border 속성은 HTML 5 문서에서는 사용할 수 없다. 그래서 표의 셀에 테두리를 그리려면
+            CSS 로 스타일을 지정해야 한다.-->
+        <table border="1">
+            <!-- <thead> 요소: 제목 행들(header rows)의 묶음(생략할 수 있음) -->
+            <thead>
+                <!-- <tr> 요쇠: 표의 행(table orws)을 표현 -->
+                    <tr>
+                        <!-- <th> 요소: 표의 제목 셀(table heading)을 표현 -->
+                        <th>Header 1</th>
+                        <th>Header 2</th>
+                        <th>Header 3</th>
+                        <th>Header 4</th>
+                    </tr>
+            </thead>
+
+            <!-- <tbody> 요소: 본문 행들(body rows)의 묶음(생략할 수 없음) -->
+            <tbody>
+                <tr>
+                    <!-- <td> 요소: 표의 본문 셀(table data)을 표현 -->
+                    <td>Data row 1 column 1</td>
+                    <td>Data row 1 column 2</td>
+                    <td>Data row 1 column 3</td>
+                    <td>Data row 1 column 4</td>
+                </tr>
+                <tr>
+                    <td>Data row 2 column 1</td>
+                    <td>Data row 2 column 2</td>
+                    <td>Data row 2 column 3</td>
+                    <td>Data row 2 column 4</td>
+                </tr>
+                <tr>
+                    <td>Data row 3 column 1</td>
+                    <td>Data row 3 column 2</td>
+                    <td>Data row 3 column 3</td>
+                    <td>Data row 3 column 4</td>
+                </tr>
+            </tbody>
+
+            <!-- <tfoot> 요소: 푸터 행들(footer rows)의 묶음(생략할 수 있음) -->
+            <!-- <tfoot></tfoot> -->
+        </table>
+
+        <hr>
+
+        <h2>Extend Cells In a Table</h2>
+
+        <table border="1">
+            <thead>
+                    <tr>
+                        <th>Header 1</th>
+                        <th>Header 2</th>
+                        <th>Header 3</th>
+                        <th>Header 4</th>
+                    </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Data 1-1</td>
+                    <td>Data 1-2</td>
+                    <!-- colspan 속성: 열(column)을 확장 -->
+                    <td colspan="2">Data 1-3</td>
+                    <!-- <td>Data 1-4</td> -->
+                </tr>
+                <tr>
+                    <!-- rowspan 속성: 행(row)을 확장 -->
+                    <td rowspan="2">Data 2-1</td>
+                    <td>Data 2-2 </td>
+                    <td>Data 2-3 </td>
+                    <td>Data 2-4</td>
+                </tr>
+                <tr>
+                    <td>Data 3-1</td>
+                    <td>Data 3-2</td>
+                    <td>Data 3-3</td>
+                    <td>Data 3-4</td>
+                </tr>
+            </tbody>
+        </table>
+            <hr>
+
+            <h2>Image</h2>
+
+            <!-- <img> 요소: 이미지(image)를 표현 -->
+            <!-- src 속성: <img> 요소에서 표시할 이미지의 경로(source)를 지정 -->
+            <!-- alt 속성: 대체 텍스트(alternative text)를 지정 -->
+            <img src="images/image-01.jpg" alt="귀여운 키티!">
+
+            <hr>
+            
+            <h2>Input Form</h2>
+
+            <!-- <form> 요소: 입력 양식(input form)을 표현 -->
+            <!-- action 속성: 입력 양시게 사용자가 입력한 데이터를 전송할 URL을 지정 -->
+            <!-- method 속성: 사용자가 입력한 데이터를 전송할 방식(get, post)을 지정 -->
+            <form action="/surver/program" method="post">
+                <p>
+                    <!-- <input> 요소: 입력 요소(input element)를 표현 -->
+                    <!-- type 속성: 입력 요소의 형태(type)을 지정 -->
+                    <!-- name 속성: 사용자가 입력한 데이터를 구분하기 위한 이름(name)을 지정-->
+                    <!-- type="text": 한 줄짜리 입력 창을 표현 -->
+                    TEXT: <!---
+                    <input type="text" name="username">
+                    <input type="text" name="username" value="harry">
+                    -->
+                    <input type="text" name="username" placeholder="Your username">
+                </p>
+
+                <p>
+                    <!-- tpye="password": 비밀번호 입력 창을 표현 -->
+                    PASSWORD: <input type="password" name="password" value="potter">
+                </p>
+                <p>
+                    <!-- type="raido": 같은 name 속성을 가지고 있는 라디오 버튼 가운데
+                         하나를 선택할 수 있는 라이도 버튼을 표현 -->
+                    <!-- value 속성: radio 버튼이나 checkbox 버튼에서 전달할 값을 지정 -->
+                    <!-- label 요소: 입력 요소의 안내 문구를 표현 -->
+                    RADIO: <input type="radio" name="favorite" value="milk" id="milk">
+                        <label for="milk">우유</label>
+                    <label>
+                        <input type="radio" name="favorite" value="cocoa"> 코코아
+                    </label>
+                    <input type="radio" name="favorite" value="juice" checked> 주스
+                </p>
+                <p>
+                    <p>
+                        <!-- type="checkbox": 체크할 수 있는 checkbox 버튼을 표현 -->
+                        CHECKBOX: <label>
+                            <input type="checkbox" name="agree" value="yes" checked> 동의합니까?
+                        </label>
+                    </p>
+                </p>
+                <p>
+                    <!-- type="file": 파일 선택 입력 창을 표현 -->
+                    FILE: <input type="file" name="photo">
+                </p>
+                <p>
+                    <!-- type="reset": 입력 양식을 초기화 하는 버튼을 표현 -->
+                    <!-- value 속성: 버튼에 표시되는 텍스트를 지정 -->
+                    RESET: <input type="reset" name="reset" value="다 지워!">
+                </p>
+                <p>
+                    <!-- type="submit": 입력 양식에 입력한 데이터를 지정한 URL로 제출하는 버튼을 표현 -->
+                    SUBMIT: <input type="submit" name="login" value="LOGIN">
+                </p>
+                <p>
+                    <!-- <select> 요소: 선택 입력 요소를 표현 -->
+                    SELECT: <select name="tour">
+                        <!-- <option> 요소: <select> 요소에 포함되는 선택 항목을 표현 -->
+                        <option value="iceland">아이슬란드</option>
+                        <option value="swiss">스위스</option>
+                        <option value="amazon" selected>아마존</option>
+                    </select>
+                </p>
+                <p>
+                    <!-- <textarea> 요소: 입력 글 상자(text area)를 표현 -->
+                    TEXTAREA: <textarea name="comment" colos="30" rows="5"></textarea>
+                </p>
+            </form>
+
+            <hr>
+
+            <h2>HTML Entity</h2>
+
+            <p>
+                <!--
+                나는 <Harry Potter>를 좋아합니다!
+                -->
+
+                나는 &lt;Harry Potter&gt;를 좋아합니다!
+            </p>
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HTML/CSS Example</title>
+        <style>
+
+            /* 태그 선택자로 <h1> 요소와 <p> 요소에 CSS 블럭을 적용 */
+            /*
+            h1 {
+                color:green;
+            }
+
+            P {
+                color: green;
+            }
+            */
+
+            /* 
+             * CSS 블록들에 지정한 스타일 속성들은 같고 선택자만 다른 경우, 선택자를 쉼표(,)로
+             * 연결해서 여서 CSS 블록을 하나로 합칠 수 있다.
+             * 여러 선택자를 쉼표(,)로 연결하면, 각 선택자로 선택한 HTML 요소들의 합집합(OR)을 선택한다.
+             */
+            /*
+            h1, p {
+                color: green;
+            }
+            */
+            /*
+             * <h1> 요소와 <p> 요소의 내부 텍스트는 <body> 요소의 내부 텍스트이다.
+             * 그래서 <body> 요소에 글자와 관련된 스타일 속성을 설정하면, <body> 요소의 후손 요소에
+             * 영향을 미친다. 즉, 글자와 관련된 스타일 속성은 상속된다. 
+             */
+            body {
+                color: green;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h1>애국가</h1>
+
+        <p>
+            동해물과 백두산이 마르고 닳도록 <br>
+            하느님이 보우하사 우리나라 만세 <br>
+            무궁화 삼천리 화려 강산 <br>
+            대한 사람 대한으로 길이 보전하세
+        </p>
+    </body>
+</html>
