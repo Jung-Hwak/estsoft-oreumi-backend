@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML/CSS Example</title>
+    <style>
+        /* #box {
+            background-color: yellowgreen;
+            width: 600px;
+            padding: 20px;
+            border: 2px solid black;
+        }
+
+        #box > div {
+            background-color: gold;
+            width: 400px;
+            padding: 20px;
+            border: 2px solid black;
+        }
+
+        #box > div > div {
+            background-color: hotpink;
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+        } */
+
+        /* 
+         * 여러 CSS 블록에 공통적으로 설정되는 스타일 속성은 같은 class 속성으로 묶어서 
+         * 설정하는 게 편하다.
+         */
+        .border {
+            border: 2px solid black;
+            margin: 0 auto;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+        #box {
+            background-color: yellowgreen;
+            width: 600px;
+        }
+
+        #box > div {
+            background-color: gold;
+            width: 400px;
+        }
+
+        #box > div > div {
+            background-color: hotpink;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="box" class="border">
+        <div class="border">
+            <div class="border"></div>
+        </div>
+    </div>
+
+</body>
+</html>

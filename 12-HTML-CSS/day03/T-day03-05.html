@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="kos">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML/CSS Example</title>
+    <style>
+        #profile {
+            background-color: gray;
+            width: 300px;
+            padding: 30px;
+
+            /*
+             * HTML 요소의 너비를 설정해서 컨테이닝 블록의 너비보다 작아진 경우, 
+             * HTML 요소를 컨테이닝 블록의 너비 가운데에 배치하기 위해 HTML 요소의 왼쪽과
+             * 오른쪽에 외부 여백을 같은 값으로 설정한다.
+             */
+            margin: 0 auto;
+        }
+
+        #profile > img {
+            width: 100%;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div id="profile">
+        <img src="https://i.namu.wiki/i/lUueuKmCUwjA249AAKYDtCInv-mAX0ARTDOZgfDPioapJsryswKgzO
+            _QDoTze1nhKWD9SaAN78Wc0cVc8oYHwg.webp" alt="귀여운 포로리">
+    </div>
+</body>
+</html>
