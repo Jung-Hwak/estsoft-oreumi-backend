@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>HTML/CSS DEMO</title>
+        <link rel="stylesheet" href="../reset.css">
+        <style>
+            #container {
+                width: 420px;
+                border: 2px solid #333;
+                margin: 100px auto;
+                padding: 20px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            #container > div {
+                width: 200px;
+                /* height: 200px; */
+                line-height: 200px;
+                text-align: center;
+            }
+            #container > div:nth-child(1) { background-color: pink; }
+            #container > div:nth-child(2) { background-color: yellowgreen; }
+            #container > div:nth-child(3) { background-color: cyan; }
+            #container > div:nth-child(4) { background-color: gold; }
+            
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div>Pink</div>
+            <div>Yellowgreen</div>
+            <div>Cyan</div>
+            <div>Gold</div>
+        </div> <!-- /#container -->
+    </body>
+</html>

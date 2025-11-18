@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>HTML/CSS DEMO</title>
+        <link rel="stylesheet" href="../reset.css">
+        <style>
+            #container {
+                height: 400px;
+                border: 3px solid green;
+                background-color: #efe;
+                text-align: center;
+                box-sizing: border-box;
+                position: relative;
+                
+            }
+            #container > div {
+                width: 200px;
+                height: 100px;
+                border: 3px solid red;
+                background-color: #fee;
+                box-sizing: border-box;
+                line-height: 100px;
+            }
+            #container > :not(:nth-child(3)) {position: absolute;}
+            #container > :nth-child(1), :nth-child(2) { top: 10px; }
+            #container > :nth-child(1), :nth-child(5) { right: 10px; }
+            #container > :nth-child(2), :nth-child(4) { left: 10px; }
+            #container > :nth-child(4), :nth-child(5) { bottom: 10px; }
+            #container > :nth-child(3) { margin: 150px auto;}
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div>BOX #1</div>
+            <div>BOX #2</div>
+            <div>BOX #3</div>
+            <div>BOX #4</div>
+            <div>BOX #5</div>
+        </div>
+    </body>
+</html>
