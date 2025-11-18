@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML/CSS Example</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+        #box {
+            width: 200px;
+
+            /* HTML 요소의 높이를 지정하지 않으면 콘텐츠에 의해 높이가 결정된다. */
+            /* height: 200px; */
+
+            border: 2px solid goldenrod;
+
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center;
+
+            /* 
+             * 한 줄로 표시되는 내부 텍스트를 콘텐트 영역의 가운데에 표시하기 위해
+             * 행의 높이를, 즉 line-height 스타일 속성을 HTML 요소의 콘텐트 영역의 
+             * 높이만큼 설정
+             */
+            line-height: 200px;
+        }
+
+        hr {
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+
+    <hr>
+
+    <p>
+        가
+        나
+        다
+        라
+    </p>
+    <pre>
+        가
+        나
+        다
+        라
+    </pre>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>HTML/CSS Example</title>
+        <link rel="stylesheet" href="../reset.css">
+        <style>
+            /* -------------------------------------------------------------------------- */
+            /* HTML 문서 전체게 적용되는 글자와 관련된 스타일 속성은 <body> 요소에 설정한다. */
+            body {
+                font-size: 2em;
+                font-weight: bold;
+                text-align: center;
+                line-height: 3;
+                text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+            }
+
+            /* 고정 폭 레이아웃(one-true layout) */
+            #container {
+                width: 1080px;
+                margin: 0 auto;
+            }
+
+            /* 헤더 영역 */
+            #header { background-color: #422; }
+
+            /* 내비게이션 영역 */
+            #nav { background-color: #242; }
+
+            /* 사이드 바 영역과 본문 영역을 나란히 배치하기 위해 #wrap 요소를 플렉스 컨테이너로 설정 */
+            #wrap { display: flex; }
+
+            /* 사이드 바 영역과 본문 영역의 높이를 설정 */
+            #sidebar, #content { line-height: 600px; }
+
+            /* 사이드 바 영역 */
+            #sidebar {
+                width: 200px;
+                background-color: #224;
+            }
+
+            /* 본문 영역 */
+            #content {
+                width: 880px;
+                background-color: #442;
+            }
+
+            /* 푸터 영역 */
+            #footer { background-color: #244; }
+        </style>
+    </head>
+    <body>
+
+        <!-- 고정 폭 레이아웃(one-true layout) -->
+         <!-- 모든 영역의 너비를 일정하게 맞추기 위해 컨테이너로 묶음 -->
+        <div id="container">
+            <header id="header">Header</header>
+    
+            <nav id="nav">Navigation</nav>
+    
+            <!-- 사이드 바 영역과 본문 영역을 나란히 배치하기 위해 컨테이너로 묶음 -->
+            <div id="wrap">
+                <aside id="sidebar">Sidebar</aside>
+
+                <main id="content">Content</main>
+            </div> <!-- /#wrap -->
+    
+            <footer id="footer">Footer</footer>
+        </div> <!-- /#container -->
+
+    </body>
+</html>

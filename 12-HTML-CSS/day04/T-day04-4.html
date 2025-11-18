@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML/CSS Example</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+        /* -------------------------------------------------------------------------- */
+        #container {
+            border: 3px solid green;
+            background-color: #204820;
+
+            /* 
+             * 2. 후손 요소들 중에서 position 스타일 속성이 "absolute"인 요소들의
+             *    컨테이닝 블록(containing block)이 되도록 위치 지정 요소로 지정
+             */
+            position: relative;
+
+            /* 
+             * 3. 모든 자식 요소가 절대적인 위치에 배치되면서 문서의 일반적인 흐름에서
+             *    제거됐으므로, #container 요소의 콘텐트 영역의 높이는 0이된다.
+             *    그래서 여기에서는 #container
+             */
+            height: 400px;
+        }
+
+        #container > div { 
+            width: 200px;
+            /* height: 100px; */
+            border: 3px solid red;
+            box-sizing: border-box;
+            background-color: #482020;
+
+            text-align: center;
+            line-height: 94px;
+            
+            /* 
+             * 1. #container 요소의 영역(padding-box)을 기준으로 배치
+             */
+            position: absolute;
+        }
+
+            /*
+             * 4. 기준 영역(reference block)과 HTML 요소 사이의 간격을 설정
+             */
+            #container > div:nth-child(1) { top: 10px; left: 10px; }
+            #container > div:nth-child(2) { top: 10px; right: 10px; }
+            #container > div:nth-child(4) { bottom: 10px; left: 10px; }
+            #container > div:nth-child(5) { bottom: 10px; right: 10px; }
+
+            /* 
+             * 5. 기준 영역, 즉 #container 요소의 padding-box를 기준으로 가운데에 배치
+             */
+            #container > div:nth-child(3) {
+                /* HTML 요소의 좌상단 모서리를 컨테이닝 블록의 가운데에 배치 */
+                top: 50%;               /* % 단위의 기준: 컨테이닝 블록의 높이*/
+                left: 50%;              /* % 단위의 기준: 컨테이닝 블록의 너비*/
+                
+                /* HTML 요소 높이의 절반만큼 위쪽으로, 너비의 절반만큼 왼쪽으로 이동 */
+                margin-top: -50px; 
+                margin-left: -100px;
+            }
+    </style>
+</head>
+<body>
+    <dvi id="container">
+        <div>BOX #1</div>
+        <div>BOX #2</div>
+        <div>BOX #3</div>
+        <div>BOX #4</div>
+        <div>BOX #5</div>
+    </dvi>
+</body>
+</html>
