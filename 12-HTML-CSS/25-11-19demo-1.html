@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML/CSS Demo</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        /* 바깥 상자 */
+        #container {
+            border: 2px solid #333;
+            display: flex;
+            text-align: center;
+            font-weight: bold;
+            width: 460px;
+            padding: 20px;
+            gap: 20px;
+            line-height: 200px;
+            margin: 100px auto;
+        }
+        /* 내부 상자 */
+        #container > div {
+            width: 200px;
+            /* height: 200px; */
+        }
+        /* 내부 상자들 의 배경색 */
+        #container > div:first-child > div:nth-child(1) { background-color: Pink;}
+        #container > div:first-child > div:nth-child(2) { background-color: yellowgreen;}
+        #container > div:last-child { background-color: gold;}
+
+        /* 내부 상자중 작은 상자의 글자 행과 서로의 간격 지정*/
+        #container > div:first-child { line-height: 100px;}
+        #container > div:first-child > div:first-child { margin-bottom: 20px;}
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div>
+            <div>Pink</div>
+            <div>Yellowgreen</div>
+        </div>
+        <div>Gold</div>
+    </div> <!-- /#container-->
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML/CSS Demo</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        #main {
+            margin: 100px auto;
+            text-align: justify;
+            padding: 20px;
+            width: 70vw;
+        }
+        /* 본문의 제목 */
+        #main > h1 { 
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 50px;
+        }
+        /* 본문 영역 */
+        #main > p {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        /* 반투명 오버레이 */
+        #overlay {
+            position: fixed;
+            top: 0; right: 0; bottom: 0; left: 0;
+            background-color: black;
+            opacity: 0.6;
+        }
+
+        /* 메시지 박스 */
+        #message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            background-color: darkgray;
+            padding: 25px 30px;
+            border-radius: 8px;
+            text-align: left;
+            line-height: 50px;
+        }
+
+        /* 메시지 박스의 제목 부분 */
+        #message > h2 {
+            font-size: 1.6em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: center;
+
+            background: #000;
+            color: #fff;
+            padding: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="overlay"></div>
+
+    <div id="message">
+        <h2>ALert!</h2>
+        <p>
+            이것은 메시지 창입니다.<br>
+            오버레이 레이어 위에 올라와있습니다.<br>
+            그래서 오버레이 레이어와 함께 나타났다 사라집니다.
+        </p>
+    </div> <!-- /#message -->
+
+    <div id="main">
+
+        <h1>Lorem ipsum dolor</h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Nisl tincidunt eget nullam non. Quis hendrerit dolor magna eget est lorem ipsum dolor sit.
+            Volutpat odio facilisis mauris sit amet massa. Commodo odio aenean sed adipiscing diam donec adipiscing
+            tristique. Mi eget mauris pharetra et. Non tellus orci ac auctor augue. Elit at imperdiet dui accumsan sit.
+            Ornare arcu dui vivamus arcu felis. Egestas integer eget aliquet nibh praesent. In hac habitasse platea dictumst
+            quisque sagittis purus. Pulvinar elementum integer enim neque volutpat ac.
+        </p>
+        <p>
+            Senectus et netus et malesuada. Nunc pulvinar sapien et ligula ullamcorper malesuada proin. Neque convallis a
+            cras semper auctor. Libero id faucibus nisl tincidunt eget. Leo a diam sollicitudin tempor id. A lacus
+            vestibulum sed arcu non odio euismod lacinia. In tellus integer feugiat scelerisque. Feugiat in fermentum
+            posuere urna nec tincidunt praesent. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Nisi
+            scelerisque eu ultrices vitae auctor eu augue ut lectus. Ipsum faucibus vitae aliquet nec ullamcorper sit amet
+            risus. Et malesuada fames ac turpis egestas sed. Sit amet nisl suscipit adipiscing bibendum est ultricies. Arcu
+            ac tortor dignissim convallis aenean et tortor at. Pretium viverra suspendisse potenti nullam ac tortor vitae
+            purus. Eros donec ac odio tempor orci dapibus ultrices. Elementum nibh tellus molestie nunc. Et magnis dis
+            parturient montes nascetur. Est placerat in egestas erat imperdiet. Consequat interdum varius sit amet mattis
+            vulputate enim.
+        </p>
+
+    </div> <!-- /#main -->
+    
+</body>
+</html>
