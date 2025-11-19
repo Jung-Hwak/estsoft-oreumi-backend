@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML/CSS Example</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+        #container {
+            border: 2px solid #999;
+            margin: 100px auto;
+
+            /* 안쪽 상자들이 나열될 수 있도록 콘텐트 영역(content box)의 너비를 설정 */
+            width: 420px;
+
+            /* 바깥쪽 상자와 안쪽 상자 사이의 여백은 내부 여백으로 설정 */
+            padding: 20px;
+
+            /* 글자와 관련된 스타일 */
+            color: black;
+            font-weight: bold;
+            text-align: center;
+            line-height: 200px;
+
+            /* 안쪽 상자들을 나열하기 위해 플렉스 컨테이너로 설정 */
+            display: flex;
+
+            /* 
+             * 컨테이너 요소의 크기와 아이템 요소의 크기에 따라, 아이템 요소들이 여러 행에
+             * 배치되도록 설정
+             */
+            flex-wrap: wrap;
+
+            /* 아이템 요소들 사이의 간격을 일괄적으로 설정 */
+            gap: 20px;
+        }
+
+        #container > div {
+            width: 200px;
+            /* height: 200px; */
+        }
+
+        #container > div:nth-child(1) { background-color: hotpink; }
+        #container > div:nth-child(2) { background-color: yellowgreen; }
+        #container > div:nth-child(3) { background-color: cyan; }
+        #container > div:nth-child(4) { background-color: gold; }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <dvi>Pink</dvi>
+        <dvi>Yellwogreen</dvi>
+        <dvi>Cyan</dvi>
+        <dvi>Gold</dvi>
+    </div> <!-- /#container -->
+</body>
+</html>

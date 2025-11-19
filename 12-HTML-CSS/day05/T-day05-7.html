@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML/CSS Example</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+        #container {
+            border: 2px solid #999;
+            margin: 100px auto;
+
+            width: 420px;
+            padding: 20px;
+
+            color: black;
+            font-weight: bold;
+            text-align: center;
+            line-height: 220px;
+
+            display: flex;
+            gap: 20px;
+        }
+        
+        #container > div {
+            width: 200px;
+            /* height: 220px; */
+        }
+
+        #container > div:first-child > div {
+            line-height: 100px;
+        }
+        #container > div:first-child > div:first-child { 
+            margin-bottom: 20px;
+        }
+
+        #container > div:first-child > div:nth-child(1) { background-color: hotpink; }
+        #container > div:first-child > div:nth-child(2) { background-color: yellowgreen; }
+        #container > div:last-child { background-color: gold; }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <div>Pink</div>
+        <div>Yellowgreen</div>
+    </div> <!-- /#container -->
+
+    <div>Gold</div>
+    
+</body>
+</html>

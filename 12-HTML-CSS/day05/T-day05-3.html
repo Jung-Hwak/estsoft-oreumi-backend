@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HMTL/CSS Example</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+        /*
+         * 글자와 관련된 스타일 속성은 상속된다.
+         * HTML 문서 전체에 적용되는 글자와 관련된 스타일 속성을 <body> 요소에 설정한다.
+         */
+        body {
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center;
+            line-height: 2.4;
+            text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        /* 각 영역의 배경색 */
+        #header { background-color: #422; }
+        #nav { background-color: #242; }
+        #sidebar { background-color: #244; }
+        #content { background-color: #442; }
+        #footer { background-color: #224; }
+
+        /* 사이드 바 영역과 본문 영역의 높이 설정 */
+        #sidebar, #content { line-height: 500px; }
+
+        /* 사이드 바 영역과 본문 영역이 나란히 배치되도록 플렉스 컨테이너로 설정 */
+        #container { display: flex; }
+
+        /* 사이드 바 영역 */
+        #sidebar { width: 200px; }
+
+        /* 본문 영역 */
+        #content { 
+            /* (#content 영역의 너비) = (컨테이닝 블록의 너비) - (#sidebar 요소의 너비) */
+            /* width: 80%;  */
+            /* width: 100% - 200px; */
+            width: calc(100% - 200px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 가변 폭 레이아웃(Fluid layout) -->
+    <header id="header">Header</header>
+    <nav id="nav">Navigation</nav>
+
+    <dvi id="container">
+        <aside id="sidebar">Sidebar</aside>
+        
+        <main id="content">Content</main>
+    </dvi> <!-- /#continer -->
+    <footer id="footer">Footer</footer>
+
+</body>
+</html>

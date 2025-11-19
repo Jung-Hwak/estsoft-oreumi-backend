@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML/CSS Example</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+        
+        /* ----------------------------------------------------------------- */
+        /*
+         * 반응형 웹(resposive web)
+         * 1. 화면 너비의 중단점 설정
+         *    → 768px, 1024px
+         * 2. 화면 너비의 범위 설정
+         *    → A. width <= 767px           (스마트폰)
+         *      B. 768px <= width <= 1023px (태블릿 PC)
+         *      C. 1024px <= width          (PC 모니터)
+         * 3. 각 화면 너비 범위에서 적용할 스타일 시트를 작성
+         * 4. 각 화면 너비 범위에서 적용할 미디어 쿼리를 작성
+         * 5. (optional) 모든 화면 너비 범위에서 공통적으로 적용되는 스타일 시트 작성
+         */
+
+        /* 5. (optional) 모든 화면 너비 범위에서 공통적으로 적용되는 스타일 시트 작성 */
+        #box {
+                text-align: center;
+                font-weight: bold;
+            }
+
+        /* A. width <= 767px */
+        /*    → (max-width: 767px) */
+        @media screen and (max-width: 767px){
+            #box {
+                border: 10px solid yellowgreen;
+                line-height: 300px;
+                font-size: 2em;
+                /* 
+                text-align: center;
+                font-weight: bold; 
+                */
+            }
+        }
+
+        /* B. 768px <= width <= 1023px */
+        /*    → (min-width: 768px) and (max-width: 1023px) */
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            #box {
+                border: 10px solid goldenrod;
+                line-height: 400px;
+                font-size: 3em;
+                /* 
+                text-align: center;
+                font-weight: bold; 
+                */
+                color: hotpink;
+            }
+        }
+
+        /* C. 1024px <= width */
+        /*    → (min-width: 1024px) */
+        @media screen and (min-width: 1024px) {
+            #box {
+                background-color: #442;
+                line-height: 400px;
+                font-size: 3em;
+                /* 
+                font-weight: bold;
+                text-align: center; 
+                */
+                color: black;
+                width: 1024px;
+                margin: 0 auto;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="box">BOX</div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML/CSS Example</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+        #container {
+            padding: 50px;
+
+            /* 표(tables)처럼 행(rows)과 열(columns)을 기준으로 아이템 요소들을 정렬 */
+            display: grid;
+
+            /* 그리드 셀을 2행 2열로 배치 */
+            grid-template-columns: repeat(2, 500px);
+            grid-template-rows: repeat(2, 400px);
+
+            /* 그리드 셀 내에서 아이템 요소들을 가운데에 배치 */
+            place-items: center center;
+        }
+
+        #container > div {
+            width: 200px;
+            height: 200px;
+            border: 10px solid crimson;
+        }
+
+        #container > div > div {
+            color: black;
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center;
+            line-height: 200px;
+            background-color: #808000;
+        }
+        /* 
+         * transform 스타일 속성
+         * → 변환 함수를 이용해 HTML 요소를 변환
+         */
+        /*
+        #container > div:nth-child(1) > div { transform: rotate(60deg); }
+        #container > div:nth-child(2) > div { transform: scale(1.2); }
+        #container > div:nth-child(3) > div { transform: translate(100px 100px); }
+        #container > div:nth-child(4) > div { transform: skew(30deg); }
+
+        #container > div > div { transition-duration: 400ms;}
+
+        #container > div { overflow: hidden;}
+        #container > div:nth-child(1) > div { transform: rotate(60deg); }
+        #container > div:nth-child(3) > div { transform: rotate(60deg) translateX(200px);}
+        #container > div:nth-child(4) > div { transform: translateX(200px) rotate(60deg);} 
+        */
+
+        #container > div:nth-child(1) > div { transform-origin: left top; }
+        #container > div:nth-child(2) > div { transform-origin: right top; }
+        #container > div:nth-child(3) > div { transform-origin: left bottom; }
+        #container > div:nth-child(4) > div { transform-origin: right bottom; }
+
+        #container > div:hover > div { transform: rotate(60deg); }
+        #container > div > div { transition-duration: 400ms; }
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div><div>BOX</div></div>
+        <div><div>BOX</div></div>
+        <div><div>BOX</div></div>
+        <div><div>BOX</div></div>
+    </div>
+</body>
+</html>

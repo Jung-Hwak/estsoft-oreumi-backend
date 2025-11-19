@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML/CSS Example</title>
+    <style>
+        #container {
+            border: 10px solid goldenrod;
+            padding: 50px;
+        }
+
+        #container > div {
+            width: 20px;
+            height: 50px;
+            background-color: #808000;
+            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        #container > div:not(:last-child) { margin-bottom: 20px; }
+        
+        #container:hover > div {
+            width: 100%;
+            background-color: #800080;
+        }
+
+        #container > div {
+            /* 
+             * transition-duration 스타일 속성 
+             * → transition 스타일 속성에 영향을 받는 스타일 속성에 변화가 생기면,
+             *   그 변화가 transition-duration 스타일 속성에 지정한 시간에 걸쳐서 진행된다.
+             */
+            /* transition-duration: 2s; */
+            transition-duration: 2000ms;
+
+            /* 
+             * transition-property 스타일 속성
+             * → transition 스타일 속성에 영향을 받는 스타일 속성을 설정
+             */
+            transition-property: width;   
+        }
+        
+        /* 
+         * transition-delay 스타일 속성
+         * → 변형(transition)이 시작되기전에 자연(delay)을 설정
+         */
+        /* #container > div:nth-child(1) { transition-delay: 0; }
+        #container > div:nth-child(2) { transition-delay: 0.5s; }
+        #container > div:nth-child(3) { transition-delay: 1s; }
+        #container > div:nth-child(4) { transition-delay: 1.5s; }
+        #container > div:nth-child(5) { transition-delay: 2s; } 
+        */
+
+        /* 
+         * transition-timing-function 스타일 속성
+         * → 시간에 대한 변형이 진행 되는 속도의 함수를 설정
+         */
+        #container > div:nth-child(1) { transition-timing-function: linear; }
+        #container > div:nth-child(2) { transition-timing-function: ease; }
+        #container > div:nth-child(3) { transition-timing-function: ease-in; }
+        #container > div:nth-child(4) { transition-timing-function: ease-out; }
+        #container > div:nth-child(5) { transition-timing-function: ease-in-out; } 
+
+        #wrap {
+            border: 10px solid goldenrod;
+            height: 400px;
+            margin-top: 50px;
+
+            position: relative;
+        }
+
+        #wrap > div {
+            /* #wrap 요소의 영역을 기준으로 배치 */
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: deeppink;
+        }
+
+        /* @keyframes 규칙으로 애니메이션의 진행 상태를 설정 */
+        @keyframes move {
+            from { top: 0;                 left: 0; }
+            33%  { top: calc(100% - 50px); left: calc((100% / 3) - 25px); }
+            66%  { top: 0;                 left: calc(100% / 3 * 2 - 25px); }
+            to   { top: calc(100% - 50px); left: calc(100% - 50px); }
+        }
+
+        #wrap > div {
+            /* 
+             * animation-name 스타일 속성
+             * → HTML 요소에 적용할 @keyframes 규칙을 설정
+             */
+            animation-name: move;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+
+            /* 
+             * animation-iteration-count 스타일 속성
+             * → 애니메이션의 반복 횟술를 설정 
+             */
+            /* animation-iteration-count: 5; */
+            animation-iteration-count: infinite;
+
+            /* 
+             * animation-direction 스타일 속성
+             * → 애니메이션이 반복될 때 애니메이션의 진행 방향을 설정 animation 스타일 속성
+             */
+            animation-direction: alternate;
+
+        }
+        /*
+             * animation-play-state 스타일 속성
+             * → 애니메이션의 진행 상태를 설정
+             */
+            #warp:hover > div { 
+                animation-play-state: paused;
+            }
+    </style>
+</head>
+<body>
+
+    
+    <div id="container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div id="wrap">
+        <div></div>
+    </div>
+</body>
+</html>
