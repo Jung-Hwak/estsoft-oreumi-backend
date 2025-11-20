@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Demo</title>
+    <link rel="stylesheet" href="../estsoft-oreumi-backend/13-javascript-programming/reset.css">
+</head>
+<body>
+    <script>
+        var radius = 10;
+        var pi = 3.14;
+        var area =  pi * radius ** 2;
+        console.group('Demo-1');
+
+        console.log('area of the circle =', area);
+
+        console.groupEnd()
+    </script>
+    <script>
+        var n1 = 3, n2 = 7;
+        var greater = (n1 > n2) ? n1 : n2;
+
+        console.group('Demo-2');
+        
+        console.log("The greater of " + n1 + " and " + n2 + " = " + greater);
+
+        console.groupEnd()
+    </script>
+    <script>
+        var num = 51;
+        // var num = 5;
+        // var num = 26;
+        console.group('Demo-3');
+        
+        if (num < 20 || num > 40) {
+            console.log('Dream comes true!')
+        }
+
+        console.groupEnd()
+    </script>
+</body>
+</html>
