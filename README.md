@@ -7,13 +7,13 @@
       - HTML 문서 작성할때 명령어 관련
       - (shift + 1)! + tab
       - `A/A B/B C/C` 같은 단어 찾아서 여러개 선택 하는방법
-        - ctrl(컨트롤 키) + D  
+        - ctrl(컨트롤 키) + D  (같은줄 오른쪽에서부터 아래로 순서대로 선택이됨)
       - 원하는 줄에 불필요한 들여쓰기(space 4칸)가 있을때 없에는 단축키
-        - shift + tab
+        - shift + tab (`....` ← 안녕하세요 옆에있는 들여쓰기 되어있는 공간을 지움)
       - HTML 문서의 전체적인 들여쓰기 잘못 하였을때 정돈 되게 하는 단축키
-        - shift + alt + F 
+        - shift + alt + F (stylesheet 에서 `body > ul > li` 에 있는 화이트스페이스인 띄어씌기가 사라질수 있음 `body>ul>li`)
       - 현재 문서의 내가 선택할 단어 모두 선택 
-        - ctrl + shift + L  
+        - ctrl + shift + L  (내가 작성한 문서에서 box라는 단어를 전부 선택 하고싶을때 유용함)
   2. Java
   3. Spring
 
