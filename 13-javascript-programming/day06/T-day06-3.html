@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+
+    </style>
+</head>
+<body>
+
+    <script>
+        // ---------------------------------------------------------------------
+        // 가로 25, 세로 15인 직사각형의 넓이와 둘레를 구해 출력
+
+        // 변수 선언과 초기화
+        var width = 25;
+        var height = 15;
+
+        // 직사각형의 넓이와 둘레를 계산
+        var area = width * height;
+        var perimeter = 2 * (width + height);
+
+        // 직사각형의 넓이와 둘레를 출력
+        console.log('width =' + width)
+        console.log('height =' + height)
+        console.log('area =' + area)
+        console.log('perimeter =' + perimeter)
+    </script>
+
+    <script>
+        // ---------------------------------------------------------------------
+        // 변수 num이 20보다 크면 "Hello World!" 문자열을 출력
+
+        // 변수의 선언과 초기화
+        var num = 26;
+        // var num = 7
+
+        console.groupCollapsed('Ex-02');
+        // if 구문으로 변수 num이 20보다 크면 "Hello World!" 문자열을 출력
+        /*
+        if (num > 20) console.log('Hello World!');
+        */
+
+        /*
+        if (num > 20) 
+            console.log('Hello World!');
+        */
+       
+        if (num > 20) {
+            console.log('Hello World!');
+        }
+
+        console.groupEnd();
+    </script>
+
+    <script>
+        // ----------------------------------------------------------------------------
+        // 변수 num이 20보다 크고 40보다 작으면 "Carpe Diem!" 문자열을 출력
+
+        // 변수의 선언과 초기화
+        var num = 26;
+
+        // if 구문으로 변수 num이 20보다 크고 40보다 작으면 "Carpe Diem!" 문자열을 출력
+        if (num > 20 && num < 40) {
+            console.log('Carpe Diem');
+        }
+    </script>
+</body>
+</html>

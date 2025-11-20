@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Demo</title>
+    <link rel="stylesheet" href="../reset.css">
+</head>
+<body>
+    <script>
+
+        // --------------------------------------------------------------------------
+        // 조건 연산자로 변수 n1과 n2 중에서 큰 값을 구해 출력
+
+        // 변수의 선언과 초기화
+        var n1 = 3 
+        var n2 = 7;
+
+        // 조건 연산자로 변수 n1과 n2 중에서 큰 값(maximum)을 확인
+        var max = n1 > n2 ? n1 : n2;
+
+        // !(n1 > n2)
+        // → n1 <= n2
+        
+        // 조건 연산자로 변수 n1과 n2 중에서 작은 값(minimum)을 확인
+        var min = n1 < n2 ? n1 : n2;
+
+        // 출력
+        console.group('Ex-01');
+
+        console.log("The greater of " + n1 + " and " + n2 + " = " + max);
+        console.log("The greater of " + n1 + " and " + n2 + " = " + min);
+        
+        // console 객체의 출력 메서드들은 인자를 여러개 지정하면, 그 인자들을 빈칸으로 구분해서 출력한다.
+        console.log("The greater of ", n1, " and ", n2, " = " + max);
+        console.log("The greater of ", n1, " and ", n2, " = " + min);
+
+        // console 객체의 출력 메서드에서 출력할 내용이 복잡한 경우, "대체 문자열"로 형식화된 문자열을 
+        // 출력할 수 있다.
+        console.log("The greater of %d and %d = %d", n1, n2, max);
+        console.log("The greater of %d and %d = %d", n1, n2, min);
+
+
+        console.groupEnd();
+
+    </script>
+    <script>
+
+        // --------------------------------------------------------------------------
+        // 반지름이 10인 원의 넓이를 구해 출력
+
+        // 변수 선언과 초기화
+        var radius = 10;
+        var pi = 3.14;
+        var area = pi * radius ** 2;
+
+        console.group('Ex-02');
+
+        // 출력
+        console.log('area of the circle =', area);
+
+        console.groupEnd();
+    </script>
+
+    <script>
+        // --------------------------------------------------------------------------
+        // 변수 num이 20보다 작거나 40보다 크면 "Dream comes ture!" 문자열을 출력
+
+        // 변수 선언과 초기화
+        // var num = 26;
+        var num = 5;
+        
+        console.group('Ex-03');
+
+        // if 구문으로 변수 num이 20보다 작거나 40보다 크면 "Dream comes ture!" 문자열을 출력
+        if(num < 20 || num > 40) {
+            console.log('Dream comes true!');
+        }
+
+        console.groupEnd();
+    </script>
+</body>
+</html>

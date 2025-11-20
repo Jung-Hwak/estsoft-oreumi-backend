@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        // ------------------------------------------------------------------------
+        // 변수의 선언
+        /*
+        var name;
+        var age;
+        
+        // 변수에 값을 대입 
+        name = 'Harry Potter';
+        age = 11;
+        */
+
+        // 변수의 선언과 초기화
+        var name = 'Harry Potter';
+        var age = 11;
+
+        // 브라우저 콘솔에 출력하는 내용을 그룹으로 묶음
+        console.groupCollapsed('Ex-01');
+        // 변수 name과 age를 브라우저 콘솔에 출력
+        console.log('Name: ' + name);
+        // → console.log('Name: ' + Harry Potter);
+        // → console.log('Name: Harry Potter');
+
+        console.log('Age: ' + age);
+        // → console.log('Age: ' + 11);
+        // → console.log('Age: ' + '11');
+        // → console.log('Age: 11');
+
+        // 콘솔 그룹의 종료
+        console.groupEnd();
+
+    </script>
+
+    <script>
+        
+        // ------------------------------------------------------------------------
+        // 배열 리터럴(array literal; [])로 배열을 생성해서 변수에 대입
+        var fruits = [
+            'Apple', 'Banana', 'Cherry', 'Grape', 'Melon', 'Strawberry'
+        ];
+
+        // 브라우저 콘솔에 출력하는 내용을 그룹으로 묶음
+        console.groupCollapsed('Ex-02');
+
+        // 배열 fruits의 세 번째 원소
+        console.log('fruits[2] = ' + fruits[2]);
+
+        // 콘솔 그룹의 종료
+        console.groupEnd();
+
+    </script>
+
+    <script>
+        
+        // ------------------------------------------------------------------------
+        // 변수 선언과 초기화
+        var x = 10;
+        var y = 3
+
+        console.group('Ex-03');
+
+        // 출력
+        console.log('x = '+ x + ', y = ' + y);
+        // → console.log('x = '+ 10 + ', y = ' + 3);
+        // → console.log('x = '+ '10' + ', y = ' + 3);
+        // → console.log('x = 10' + ', y = ' + 3);
+        // → console.log('x = 10 , y = ' + 3);
+        // → console.log('x = 10 , y = ' + '3');
+        // → console.log('x = 10 , y = 3');
+        
+        console.log('x + y = ' + x + y);
+        // → console.log('x + y = ' + 10 + 3);
+        // → console.log('x + y = ' + '10' + 3);
+        // → console.log('x + y = 10' + 3);
+        // → console.log('x + y = 10' + '3');
+        // → console.log('x + y = 103');
+
+        console.log('x + y = ' + (x + y));
+        // → console.log('x + y = ' + (10 + 3));
+        // → console.log('x + y = ' + 13);
+        // → console.log('x + y = ' + '13');
+        // → console.log('x + y = 13');
+
+        console.log('x - y = ' + x - y);
+        // → console.log('x - y = ' + 10 - 3);
+        // → console.log('x - y = ' + '10' - 3);
+        // → console.log('x - y = 10' - 3);
+        // → console.log(NAN - 3);                      // Not-a-Number
+        // → console.log(NAN);
+
+        console.log('x - y = ' + (x - y));
+
+        console.log('x * y = ' + x * y);
+        console.log('x / y = ' + x / y);
+        console.log('x % y = ' + x % y);
+
+        console.groupEnd();
+
+    </script>
+
+</body>
+</html>
