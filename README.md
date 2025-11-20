@@ -4,10 +4,14 @@
 
 - BackEnd 개발자 과정 class (2025.11.12 ~ 2026.04.1)
   1. HTML/CSS
-       - HTML 문서 작성할때 명령어 관련
-       - (shift + 1)! + tab
-       - `A/A B/B C/C` 같은 단어 찾아서 여러개 선택 하는방법
-         - ctrl(컨트롤 키) + D  
+      - HTML 문서 작성할때 명령어 관련
+      - (shift + 1)! + tab
+      - `A/A B/B C/C` 같은 단어 찾아서 여러개 선택 하는방법
+        - ctrl(컨트롤 키) + D  
+      - 원하는 줄에 불필요한 들여쓰기(space 4칸)가 있을때 없에는 단축키
+        - shift + tab
+      - HTML 문서의 전체적인 들여쓰기 잘못 하였을때 정돈 되게 하는 단축키
+        - shift + alt + f 
   2. Java
   3. Spring
 
