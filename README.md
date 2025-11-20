@@ -11,7 +11,9 @@
       - 원하는 줄에 불필요한 들여쓰기(space 4칸)가 있을때 없에는 단축키
         - shift + tab
       - HTML 문서의 전체적인 들여쓰기 잘못 하였을때 정돈 되게 하는 단축키
-        - shift + alt + f 
+        - shift + alt + F 
+      - 현재 문서의 내가 선택할 단어 모두 선택 
+        - ctrl + shift + L  
   2. Java
   3. Spring
 
