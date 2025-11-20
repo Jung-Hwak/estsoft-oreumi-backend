@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        console.groupCollapsed('Ex-01');
+        document.write('Hello World!');
+
+        document.write('<h1>Hello World!</h1>');
+
+        console.log('Do your best!');
+
+    // ----------------------------------------------------------------------------
+        var name = "Harry Potter";
+        var age = "11";
+
+        console.log('name: ' + name );
+        console.log('age: ' + age );
+
+    // ----------------------------------------------------------------------------
+        var fruits = ['Apple', 'Banana', 'Cherry', 'Grape', 'Melon', 'Strawberry'];
+
+        console.log('fruits = ' + fruits[2]);
+    // ----------------------------------------------------------------------------
+        var x = 10; 
+        var y = 3;
+
+        console.log('x = ', x + ', y = ', y);
+        console.log('x + y =', (x + y));
+        console.log('x - y =', (x - y));
+        console.log('x * y =', x * y);
+        console.log('x / y =', x / y);
+        console.log('x % y =', x % y);
+
+        console.groupEnd();
+    </script>
+
+    <script>
+        console.group('Ex-02');
+        var width = 25;
+        var height = 15;
+        var area = width * height;
+        var perimeter = (width + height) * 2;
+
+        console.log('width =', width)
+        console.log('height =', height)
+        console.log('area =', area)
+        console.log('perimeter =', perimeter)
+
+
+        var num = 26;
+        // var num = 7;
+
+        if (num > 20) {
+            console.log('Hello World!');
+        }
+
+        // ----------------------------------------------------------------------------
+        // var num = 51;
+        // var num = 5;
+        var num = 26;
+
+        if (num > 20 && num < 40 ) {
+            console.log('Crape Diem!')
+        }
+
+        console.groupEnd();
+    </script>
+
+</body>
+</html>
