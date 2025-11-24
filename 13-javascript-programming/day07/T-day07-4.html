@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+</head>
+<body>
+    <script>
+
+        // ---------------------------------------------------------------------
+        // 배열 favorites에서 원소가 "Coke"이면 "Soft Drink"를 출력하고,
+        // 그렇지 않으면 원소를 그대로 출력
+
+        // 배열생성
+        var favorites = ['Coffee', 'Juice', 'Coke', 'Milk', 'Tea'];
+
+        console.group('Ex-01A');
+        // for 구문으로 배열 favorites의 원소를 차례대로 확인
+        for (var i = 0; i < favorites.length; i++) {
+            // 인덱스가 변수 i인 원소가 "Coke"이면 "Soft Drink"를 출력하고,
+            // 그렇지 않으면 원소를 그대로 출력
+            if (favorites[i] === 'Coke') {
+                console.log('Soft Drink');
+            } else {
+                console.log(favorites[i]);
+            }
+        }
+
+        console.groupEnd();
+    </script>
+
+    <script>
+
+        // ---------------------------------------------------------------------
+        // 배열 favorites에서 원소가 "Coke"이면 "Soft Drink"를 출력하고,
+        // 그렇지 않으면 원소를 그대로 출력
+
+        // 배열생성
+        var favorites = ['Coffee', 'Juice', 'Coke', 'Milk', 'Tea'];
+
+        console.group('Ex-01B');
+        // for 구문으로 배열 favorites의 원소를 차례대로 확인
+        for (var i = 0; i < favorites.length; i++) {
+            // 콘솔에 출력할 값을 변수에 대입
+            var value = favorites[i];
+
+            // 변수value가 "Coke"이면 "Soft Drink"를 대입
+            if (value === 'Coke') {
+                value = 'Soft Drink';
+            }
+        }
+
+        // 변수 value를 출력
+        console.log(value);
+
+        console.groupEnd();
+    </script>
+
+    <script>
+
+        // ---------------------------------------------------------------------
+        // 배열 favorites에서 원소가 "Coke"이면 "Soft Drink"를 출력하고,
+        // 그렇지 않으면 원소를 그대로 출력
+
+        // 배열생성
+        var favorites = ['Coffee', 'Juice', 'Coke', 'Milk', 'Tea'];
+
+        console.group('Ex-01C');
+        // for 구문으로 배열 favorites의 원소를 차례대로 확인
+        for (var i = 0; i < favorites.length; i++) {
+            // 조건 연산자로 콘솔에 출력할 값을 변수에 대입
+            var value = favorites[i] === 'Coke' ? 'Soft Drink' : favorites[i];
+            
+            // 변수 value를 출력
+            console.log(value);
+        }
+
+        console.groupEnd();
+    </script>
+
+    <script>
+
+        // ------------------------------------------------------------------------
+        // 0, 50, 100, 150, ..., 350과 같이 출력
+
+        console.group('Ex-02A');
+
+        // for 구문으로 인덱스 변수가 0, 50, 100, 150, ..., 350과 같이 증가 하도록 작성
+        // → i = 0, 50, 100, 150, ..., 350;
+        for (var i = 0; i <= 350; i += 50) {
+            // console.log('margin-top: ' + i + 'px;');
+            // console.log('margin-top: %dpx;', i);
+
+            // 템플릿 리터럴(template literal)의 표현식 보간으로 문자열 중간에 값을 삽입
+            console.log(`margin-top: ${i}px;`);
+        }
+
+
+        console.groupEnd();
+    </script>
+    <script>
+
+        // ------------------------------------------------------------------------
+        // 0, 50, 100, 150, ..., 350과 같이 출력
+        // → i = 0, 1, 2, 3, 4, 5, 6, 7;
+        // → i * 50
+        console.group('Ex-02B');
+
+        // for 구문으로 인덱스 변수가 0에서부터 7까지 증가하도록 작성
+        // → i = 0, 1, 2, 3, 4, 5, 6, 7;
+        // for (var i = 0; i <= 7; i ++) {
+        for (var i = 0; i < 8; i ++) {
+            // console.log('margin-top: ' + i * 50 + 'px;');
+            // console.log('margin-top: %dpx;', i * 50);
+
+            // 템플릿 리터럴(template literal)의 표현식 보간으로 문자열 중간에 값을 삽입
+            console.log(`margin-top: ${i * 50}px;`);
+        }
+
+        console.groupEnd();
+    </script>
+
+    <script>
+
+        // -------------------------------------------------------------------------
+        // 0, 50, 100, 150, 0, 50, 100, 150과 같이 출력
+        // → [0, 50, 100, 150], [0, 50, 100, 150]
+        console.group('Ex-03A');
+
+        /*
+        for 구문으로 인덱스 변수가 0, 50, 100, 150과 같이 증가 하도록 작성
+        //→ i = 0, 50, 100, 150;
+        for (var i = 0; i <= 150; i += 50) {
+            console.log(`margin-top: ${i}px;`);
+        }
+        */
+
+        // for 구문으로 아래 반복문이 2번 반복되도록 작성
+        // → 반복문 안에 반복문이 들어간 중첩 반복문
+        // → 중첩 반복문에서는 바깥쪽 반복문의 인덱스 변수와 안쪽 반복문의 인덱스 변수를
+        //   다르게 사용해야 한다.
+        for (var i = 0; i < 2; i++) {
+            // for 구문으로 인덱스 변수가 0, 50, 100, 150과 같이 증가 하도록 작성
+            // → i = 0, 50, 100, 150;
+            for (var j = 0; j <= 150; j += 50){
+                console.log(`margin-top: ${j}px;`);
+            }
+
+        }
+
+        console.groupEnd();
+    </script>
+
+    <script>
+
+        // -------------------------------------------------------------------------
+        // 0, 50, 100, 150, 0, 50, 100, 150과 같이 출력
+
+        // value = 0, 50, 100, 150, 0, 50, 100, 150
+        // i = 0, 1, 2, 3, 4, 5, 6, 7;
+        // j = 0, 1, 2, 3, 0, 1, 2, 3;
+        // value = j * 50;
+        // value = (i % 4) * 50
+
+        console.group('Ex-03B');
+
+        // for 구문으로 인덱스 변수 i가 0에서부터 7까지 1씩 증가하도록 작성
+        // → i = 0, 1, 2, 3, 4, 5, 6, 7;
+        for (var i = 0; i < 8; i++) {
+            console.log(`margin-top: ${i % 4 * 50}px;`);
+        }
+
+        console.groupEnd();
+    </script>
+
+    
+</body>
+</html>

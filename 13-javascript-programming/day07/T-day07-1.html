@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../reset.css">
+    <title>Html/CSS Example</title>
+    <style>
+        /* ----------------------------------------------- */
+        /* 고정 폭 레이아웃(one-true layout) */
+
+        #container {
+            /* 모든 영역의 너비를 일정하게 설정 */
+            width: 1080px;
+            margin: 0 auto;
+        }
+
+        /* 헤더영역 */
+        #header > h1 {
+            padding: 0.8em 0.6em;
+
+            font-size: 2.4em;
+            font-weight: 900;
+            text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+
+        }
+
+        /* 내비게이션 영역 */
+        #nav {
+            background-color: #555;
+            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+
+            /* 그림자가 아래에 나오는 콘텐츠를 가리지 않도록 여백을 설정 */
+            margin-bottom: 5px;
+
+            /* 메뉴 바들을 나란히 배치하기 위해 플렉스 컨테이너로 설정 */
+            display: flex;
+
+            /* 메뉴 바들을 양쪽 끝에 배치 */
+            justify-content: space-between;
+        }
+
+        #nav > ul {
+            /* 메뉴 항목들을 나란히 배치하기 위해 플렉스 컨테이너로 설정 */
+            display: flex;
+        }
+
+        #nav > ul > li > a {
+            /* 메뉴 바의 <a> 요소는 사용자가 사용하기 편하도록 상자 형태로 표현 */
+            display: block;
+            padding: 1em 2em;
+
+            /* 브라우저가 <a> 요소에 기본적으로 설정하는 스타일 속성들을 초기화 */
+            text-decoration: none;
+            color: white;
+
+            text-shadow: 1px 1px 2px black;
+        }
+
+        #nav > ul > li > a:hover { background-color: black; }
+
+        #wrap {
+            /* 사이드 바 영역과 본문 영역을 나란히 배치하기 위해 플렉스 컨테이너로 설정 */
+            display: flex;
+        }
+
+        /* 사이드 바 영역 */
+        #sidebar {
+            width: 200px;
+            padding-top: 1em;
+        }
+
+        #sidebar > ul > li > a { 
+            /* 메뉴 바의 <a> 요소는 사용자가 사용하기 편하도록 상자 형태로 표현 */
+            display: block;
+            padding: 0.4em 1em;
+
+            /* 브라우저가 <a> 요소에 기본적으로 설정하는 스타일 속성들을 초기화 */
+            text-decoration: none;
+            color: inherit;
+        }
+
+        #sidebar > ul > li > a:hover { background-color: #ccc; }
+
+        /* 본문 영역 */
+        #content {
+            width: 880px;
+            padding: 2em;
+            box-sizing: border-box;
+
+            /* 사이드 바 영역과 본문 영역 사이의 구분선 */
+            border-left: 1px solid #aaa;
+        }
+
+        #content > h2 {
+            font-size: 1.6em;
+            font-weight: bold;
+            margin-bottom: 0.8em;
+        }
+
+        #content > p {
+            line-height: 1.5;
+            margin-top: 1em;
+        }
+
+        /* 푸터 영역 */
+        #footer {
+            /* background-color: #999; */
+            border-top: 1px solid #aaa;
+            padding: 3em;
+            text-align: right;
+            font-size: smaller;
+        }
+    </style>
+</head>
+<body class="paper">
+    <div id="container">
+
+        <!-- 고정 폭 레이아웃(one-true layout) -->
+        <header id="header">
+            <h1>One-True Layout</h1>
+        </header>
+        <nav id="nav">
+            <!-- GNB(Global Navigation Bar) -->
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#html">HTML</a></li>
+                <li><a href="#css">CSS</a></li>
+                <li><a href="#javascript">JavaScript</a></li>
+                <li><a href="#jquery">jQuery</a></li>
+            </ul>
+
+            <ul>
+                <li><a href="#login">Log in</a></li>
+                <li><a href="#signup">Sign up</a></li>
+            </ul>
+        </nav>
+
+        <div id="wrap">
+            <aside id="sidebar">
+                <!-- LNB(Local Navigation Bar) -->
+                <ul>
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#html">HTML</a></li>
+                    <li><a href="#css">CSS</a></li>
+                    <li><a href="#javascript">JavaScript</a></li>
+                    <li><a href="#jquery">jQuery</a></li>
+                </ul>
+            </aside>
+            <main id="content">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et
+                    dolore magna aliqua. Nisl tincidunt eget nullam non. Quis hendrerit dolor magna eget est lorem ipsum
+                    dolor sit. Volutpat odio facilisis mauris sit amet massa. Commodo odio aenean sed adipiscing diam
+                    donec
+                    adipiscing tristique. Mi eget mauris pharetra et. Non tellus orci ac auctor augue. Elit at imperdiet
+                    dui
+                    accumsan sit. Ornare arcu dui vivamus arcu felis. Egestas integer eget aliquet nibh praesent. In hac
+                    habitasse platea dictumst quisque sagittis purus. Pulvinar elementum integer enim neque volutpat ac.
+                </p>
+                <p>
+                    Senectus et netus et malesuada. Nunc pulvinar sapien et ligula ullamcorper malesuada proin. Neque
+                    convallis a cras semper auctor. Libero id faucibus nisl tincidunt eget. Leo a diam sollicitudin
+                    tempor id. A
+                    lacus vestibulum sed arcu non odio euismod lacinia. In tellus integer feugiat scelerisque. Feugiat
+                    in
+                    fermentum posuere urna nec tincidunt praesent. Porttitor rhoncus dolor purus non enim praesent
+                    elementum facilisis. Nisi scelerisque eu ultrices vitae auctor eu augue ut lectus. Ipsum faucibus
+                    vitae
+                    aliquet nec ullamcorper sit amet risus. Et malesuada fames ac turpis egestas sed. Sit amet nisl
+                    suscipit
+                    adipiscing bibendum est ultricies. Arcu ac tortor dignissim convallis aenean et tortor at. Pretium
+                    viverra
+                    suspendisse potenti nullam ac tortor vitae purus. Eros donec ac odio tempor orci dapibus ultrices.
+                    Elementum nibh tellus molestie nunc. Et magnis dis parturient montes nascetur. Est placerat in
+                    egestas
+                    erat imperdiet. Consequat interdum varius sit amet mattis vulputate enim.
+                </p>
+                <p>
+                    Sit amet nulla facilisi morbi tempus. Nulla facilisi cras fermentum odio eu. Etiam erat velit
+                    scelerisque in
+                    dictum non consectetur a erat. Enim nulla aliquet porttitor lacus luctus accumsan tortor posuere. Ut
+                    sem
+                    nulla pharetra diam. Fames ac turpis egestas maecenas. Bibendum neque egestas congue quisque
+                    egestas diam. Laoreet id donec ultrices tincidunt arcu non sodales neque. Eget felis eget nunc
+                    lobortis
+                    mattis aliquam faucibus purus. Faucibus interdum posuere lorem ipsum dolor sit.
+                </p>
+            </main>
+        </div> <!-- /#container-->
+
+        <footer id="footer">
+            <!-- HTML 엔티티(entity) -->
+            &copy; 2016-2025 Cheonha University.
+        </footer>
+    </div> <!-- /#container-->
+</body>
+
+</html>
