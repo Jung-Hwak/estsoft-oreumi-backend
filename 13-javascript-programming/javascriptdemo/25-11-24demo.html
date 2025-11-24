@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DEMO</title>
+</head>
+<body>
+    <script>
+        var favorites = ['Coffee', 'Juice', 'Coke', 'Milk', 'Tea'];
+
+        console.group('1');
+
+        for (var i = 0; i < favorites.length; i++) {
+            if (favorites[i] === 'Coke') {
+                console.log('Soft Drink');
+            } else {
+                console.log(favorites[i]);
+            }
+        }
+
+        console.groupEnd();
+    </script>
+    <script>
+
+        // 배열로 만들어서 출력 하는방식
+        // var px = [0, 50, 100, 150, 200, 250, 300, 350]
+        // for (var i = 0; i < px.length; i++) {
+        //     console.log('margin-top: %dpx', px[i]);
+        // }
+
+        for (var i = 0; i < 8; i++) {
+            console.log()
+        }
+            
+        console.group('2');
+
+        for (var i = 0; i < 8; i++) {
+            // console.log('margin-top: %dpx ', (i * 50));
+            console.log(`margin-top: ${i * 50}px;`);
+        }
+
+        console.groupEnd();
+    </script>
+    <script>
+        console.group('3');
+
+        // 단순 방식
+        // for (var i = 0; i < 2; i++) {
+        //     console.log("margin-top: 0px;");
+        //     console.log("margin-top: 50px;");
+        //     console.log("margin-top: 100px;");
+        //     console.log("margin-top: 150px;");
+        // }
+
+
+        for (var i = 0; i < 2; i++) {
+            for (var j = 0; j <= 3; j++) {
+                // console.log('margin-top: %dpx ', (j * 50));
+                console.log(`margin-top: ${j * 50}px;`);
+            }
+        }
+
+        console.groupEnd();
+    </script>
+</body>
+</html>
