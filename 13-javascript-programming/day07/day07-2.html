@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+    <link rel="stylesheet" href="../reset.css">
+</head>
+<body>
+    <script>
+        var x = 16; 
+        var y = 29;
+
+        console.groupCollapsed('EX-01');
+
+        var max_ = x - y
+        var min_ = y - x
+        if (x > y) {
+            console.log('x - y =', max_);
+        }
+        else if (x < y) {
+            console.log('x - y = ', min_);
+        }
+
+        console.groupEnd();
+
+    </script>
+
+    <script>
+        var num = 8;
+        // var num 13 ;
+
+        console.groupCollapsed('EX-02');
+
+        for (var i = 1; i <= num; i++) {
+            console.log(i + '. Do your best!')
+        }
+
+        console.groupEnd();
+    </script>
+
+    <script>
+        var numbers = [4, 17, 32, 3, 8, 13, 41, 27, 16, 1];
+
+        console.groupCollapsed('EX-03');
+
+        for (var i = 0; i < numbers.length; i++) {
+            if (numbers[i] > 15) {
+                console.log(numbers[i]);
+            }
+        }
+
+        console.groupEnd();
+    </script>
+
+    <script>
+        var numbers = [4, 17, 32, 3, 8, 13, 41, 27, 16, 1];
+        console.group('EX-04');
+
+        for (var i = 0; i < numbers.length; i++) {
+            if (i % 2) {
+                console.log(numbers[i]);
+            }
+        }
+
+        console.groupEnd();
+    </script>
+
+    <script>
+        var favorites = ['Coffee', 'Juice', 'Coke', 'Milk', 'Tea'];
+
+        console.group('EX-05');
+
+        for (var i = 0; i < favorites.length; i++) {
+            if (favorites[i] === 'Coffee' || favorites[i] === 'Tea') {
+                console.log('%d. %s', i, favorites[i])
+            }
+        }
+
+        console.groupEnd();
+    </script>
+</body>
+</html>

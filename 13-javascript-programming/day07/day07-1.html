@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+    <link rel="stylesheet" href="../reset.css">
+</head>
+<body>
+    <script>
+
+        var num = 28;
+
+        console.groupCollapsed('Ex-01');
+
+        if (num % 2 === 0) {
+            console.log(num + 'is an even number.');
+        } else {
+            console.log(num + 'is an odd number.');
+        }
+
+        console.groupEnd();
+    </script>
+
+    <script>
+        var num = 42;
+        // var num = 10;
+        // var num = 8;
+        // var num = 45;
+
+        console.groupCollapsed('Ex-02');
+
+        if ( num % 3 === 0 && num % 5 === 0) {
+            console.log('FizzBuzz');
+        } else if (num % 3 === 0) {
+            console.log('Fizz');
+        } else if ( num % 5 === 0) {
+            console.log('Buzz')
+        } 
+
+        console.groupEnd();
+    </script>
+    <script>
+        
+        var num = 10;
+
+        console.groupCollapsed('Ex-03');
+
+        for (var i = 1; i <= num; i++ ) {
+            console.log(i)
+        }
+
+        console.groupEnd();
+    </script>
+    <script>
+        var num = 20;
+
+        console.groupCollapsed('Ex-04');
+        for (var i = 1; i <= num; i++) {
+            if (i % 2 === 0){
+            console.log(i);
+            }
+        }
+        console.groupEnd();
+    </script>
+
+    <script>
+        var numbers = [4, 17, 32, 3, 8, 13, 41, 27, 16, 1]
+        
+        for (var i = 0; i <= numbers.length; i++) {
+            console.log('numbers[%d] = %d', i, numbers[i]);
+        }
+    </script>
+</body>
+</html>
