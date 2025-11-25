@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ---------------------------------------------------------------------
+        // 2초마다 브라우저 콘솔에 "red", "green", "blue", "red", "green", ...와 같이 출력
+
+        // 타이머의 시간 간격
+        const INTERVAL = 2000;
+        
+        // 출력할 값을들 저장하는 배열
+        const colors = ['red', 'green', 'blue'];
+
+        // 출력할 원소의 인덱스를 나타내는 변수
+        // → i = 0, 1, 2, 3, 0, 1, 2, ...;
+        let i = 0;
+        
+        // window.setInterval 메서드로 타이머 등록
+        window.setInterval(function () {
+            // 이 함수는 setInterval 메서드로 등록한 타이머에 의해 2000ms마다 실행된다.
+
+            // 브라우저 콘솔에 배열 colors의 원소를 출력
+            console.log('background-color: $s', colors[i]);
+
+            /*
+            // 2000ms가 지난 다음, 타이머에 의해 이 함수가 다시 실행됐을 때 출력할 값의 인덱스를 설정
+            i++;
+
+            // 배열 colors의 원소를 반복적으로 출력하기 위해, 원소의 인덱스를 나타내는
+            // 변수 i가 3이 되면, 배열 colors의 첫 번째 원소를 나타내도록 인덱스 변수 i는 0이 되어야 한다.
+            // if (i === 3) i = 0;
+            // if (i === colors.length) i = 0;
+            i %= colors.length;
+            */
+           
+            // 위 두문장을 문장 하나로 작성    
+            i = (i + 1) % colors.length;
+        }, INTERVAL);
+
+    </script>
+</body>
+</html>
