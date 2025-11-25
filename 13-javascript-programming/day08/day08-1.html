@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+</head>
+<body>
+    <script>
+
+        console.groupCollapsed('1');
+
+        function printName () {
+            console.log('Jung Hwak');
+        }
+        
+        printName();
+
+        console.groupEnd();
+    </script>
+
+    <script>
+        function greeting (name) {
+            console.log(`Hi, ${name}. Nice to meet you!`);
+        }
+
+        greeting('Jung');
+    </script>
+
+    <script>
+    
+        console.groupCollapsed('2');
+
+        function getAverage (x, y) {
+            return (x + y) / 2;
+        }
+        
+        var x = 31;
+        var y = 17;
+        console.log('The average of %d and %d = %d' , x, y, getAverage(x, y));
+        
+        getAverage();
+
+        console.groupEnd();
+    </script>
+
+    <script>
+        console.groupCollapsed('3');
+
+        const rect = {
+            width: 13, 
+            height: 8,
+            getArea: function () {
+                return rect.width * rect.height;
+            }
+        };
+        
+        console.log('Area = %d', rect.getArea());
+        
+        console.groupEnd();
+    </script>
+
+    <script>
+
+        console.groupCollapsed('4');
+        
+        const INTERVAL = 3000; 
+
+        window.setTimeout(function () {
+            console.log('Pay attention!')
+        }, INTERVAL);
+
+        console.groupEnd();
+    </script>
+
+    <script>
+        console.group('5');
+        let i = 1;
+        window.setInterval(function () {
+            console.log('i = ' + i++);
+        }, 2000);
+        
+        console.groupEnd();
+    </script>
+
+</body>
+</html>
