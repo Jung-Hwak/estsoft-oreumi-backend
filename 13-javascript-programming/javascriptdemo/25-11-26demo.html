@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Demo</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+        #newsTicker {
+            border: 5px solid goldenrod;
+            margin: 100px auto;
+            width: 300px;
+            height: 20px;
+            overflow: hidden;
+        }
+        #newsTicker > ul > li {
+            line-height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="newsTicker">
+
+        <ul>
+
+            <li>1. Time is gold.</li>
+            <li>2. No sweat, no sweet.</li>
+            <li>3. Asking costs nothing.</li>
+            <li>4. Step by step goes a long way.</li>
+            <li>5. You will never know until you try.</li>
+
+        </ul>
+
+    </div>
+    <script>
+
+        var newsList = document.querySelector('#newsTicker > ul');
+        const INTERVAL = 2000;
+        const DURATION = 400;
+
+        window.setInterval(function () {
+            newsList.style.marginTop = '-2em';
+            window.setTimeout(function () {
+                newsList.appendChild(newsList.firstElementChild);
+                newsList.removeAttribute('style');
+            });
+        }, INTERVAL);
+    </script>
+</body>
+</html>
