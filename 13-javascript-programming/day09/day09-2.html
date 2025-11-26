@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JavaScript Example</title>
+        <link rel="stylesheet" href="../reset.css">
+        <style>
+            #box {
+                width: 200px;
+                height: 200px;
+                border: 2px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <ul id="list">
+            <li><a href="http://www.google.com">Google</a></li>
+            <li><a href="http://www.naver.com">Naver</a></li>
+            <li><a href="http://www.daum.net">Daum</a></li>
+        </ul>
+        <script>
+            const Url = document.querySelectorAll('#list > li > a');
+
+            for (let i = 0; i < Url.length; i++) {
+                Url.getAttributes('href');
+                Url[i].innerHTML += `(${href})`;
+            }
+        </script>
+
+        <h1 id="best">DO YOUR BEST!</h1>
+
+        <script>
+            const colors = ['red', 'blue', 'green', 'gold'];
+            const best = document.getElementById('best');
+            const INTERVAL = 2000;
+            let i = 0;
+            window.setInterval(function () {
+                best.style.color = colors[i];
+                i++;
+                i %= colors.length;
+
+            }, INTERVAL);
+        </script>
+
+        <div id="box"></div>
+
+        <script>
+            const box = document.getElementById('box');
+            let j = 1;
+            const timerID = window.setInterval(function () { 
+                box.style.marginLeft = (j * 200) + 'px';
+                j++
+                if (j === 4) window.clearInterval(timerID);
+            }, INTERVAL);
+        </script>
+    </body>
+</html>

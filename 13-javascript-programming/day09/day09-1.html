@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+</head>
+<body>
+    <h1 id="hello">Hello World!</h1>
+    <script>
+        document.getElementById('hello').textContent = 'Hello JavaScript!'
+    </script>
+
+    <a href="https://www.google.com" id="search">Search engine</a>
+
+    <script>
+        const search = document.getElementsById('search');
+
+        search.setAttribute('href', 'https://wwww.naver.com');
+    </script>
+
+    <h1 id="time">Time is gold.</h1>
+
+    <script>
+        window.setTimeout(function () { 
+            document.getElementById('time').style.display = 'none';
+        }, 3000)
+
+    </script>
+
+    <h2 class="words">Time is gold.</h2>
+    <h2 class="words">No sweat, no sweet.</h2>
+    <h2 class="words">Asking costs nothing.</h2>
+
+    <script>
+
+        const words = document.getElementsByClassName('words');
+        for (let i = 0; i < words.length; i++) {
+            words[i].style.color = 'red';
+        }
+    
+    </script>
+
+</body>
+</html>

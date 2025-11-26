@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+</head>
+<body>
+
+    <h1 id="hello">Hello Wordl!</h1>
+
+    <script>
+
+        // -----------------------------------------------------------------------
+        // #hello 요소의 내부 텍스트를 "Hello JavaScript!"로 설정
+        // → 1. DOM에서 #hello 요소를 표현하는 HTMLElement객체를 탐색
+        // → 2. HTMLElement 객체의 innerHTML 속성으로 HTML 요소의 내부 마크업을 설정
+        
+        // → 1. DOM에서 #hello 요소를 표현하는 HTMLElement객체를 탐색
+        const hello = document.getElementById('hello');
+
+        // #hello 요소의 내부 마크업이나 내부 텍스트를 참조
+        console.log('hello.innerHTML = %s', hello.innerHTML);
+        console.log('hello.innerText = %s', hello.innerText);
+        console.log('hello.textContent = %s', hello.textContent);
+
+        // → 2. HTMLElement 객체의 innerHTML 속성으로 HTML 요소의 내부 마크업을 설정
+        hello.innerHTML = 'Hello JavaScript!'; 
+    </script>
+
+    <a href="https://www.google.com" id="search">Search engine</a>
+    
+    <script>
+
+        // -----------------------------------------------------------------------
+        // #search 요소의 href 속성을 "https://www.naver.com"으로 설정
+        // → 1. DOM에서 #search 요소를 표현하는 HTMLElemnet 객체를 탐색
+        //   2. HTMLElement 객체의 setAttribute 메서드로 href 속성을 설정
+        //      또는 HTMLElement 객체의 href 속성으로 href 속성을 설정
+
+        /*
+        // → 1. DOM에서 #search 요소를 표현하는 HTMLElemnet 객체를 탐색
+        // const search = document.getElementById('search');
+        const search = document.querySelector('#search');
+
+        console.log('search.href = %s', search.getAttribute('href'));
+        
+        //   2. HTMLElement 객체의 setAttribute 메서드로 href 속성을 설정
+        // search.setAttribute('href', 'https://wwww.naver.com');
+
+        //      또는 HTMLElement 객체의 href 속성으로 href 속성을 설정
+        search.href = 'https://wwww.naver.com';
+        */
+
+        // → 1. DOM에서 #search 요소를 표현하는 HTMLElemnet 객체를 탐색
+        //   2. HTMLElement 객체의 setAttribute 메서드로 href 속성을 설정
+        document.getElementById('search').href = 'https://www.naver.com';
+        // → (document.getElementById('search')).href = 'https://www.naver.com';
+        // → (element).href = 'https://www.naver.com';
+
+        /*
+         * 함수 호출 연산자의 첫 번째 피연산자는 함수(function)이다. 
+         * 함수 호출 연산자의 연산 결과는 함수의 반환 값이다.
+         * 속성 접근 연산잔(.)의 첫 번째 피연산자는 객체(object) 이다.
+         */
+
+    </script>
+
+    <h1 id="time">Time is gold.</h1>
+
+    <script>
+
+        // -----------------------------------------------------------------------
+        // 3초가 지난 다음, #time 요소를 화면에서 사라지게 설정
+        // → 1. window.setTimeout 메서드로 타이머를 등록
+        //   2. DOM에서 #time 요소를 표현하는 HTMLElement 객체를 탐색
+        //   3. HTMLElement 객체의 style 속성으로 #time 요소를 화면에서 사라지게 설정
+
+
+        // 1. window.setTimeout 메서드로 타이머를 등록
+        window.setTimeout(function () {
+            // 이 함수는 setTimeout 메서드로 등록한 타이머에 의해 3000ms가 지난 다음
+            
+            /*
+            * HTML 요소가 브라우저 화면(viewport)에서 보이지 않도록 설정
+            * 1. display: none;
+            * 2. visibility: hidden;
+            * 3. opactity: 0;
+            * 4. width: 0; height: 0; font-size: 0;
+            */
+           
+           // 2. DOM에서 #time 요소를 표현하는 HTMLElement 객체를 탐색
+           // 3. HTMLElement 객체의 style 속성으로 #time 요소를 화면에서 사라지게 설정
+           document.getElementById('time').style.display = 'none';
+
+        }, 3000);
+
+    </script>
+
+</body>
+</html>
