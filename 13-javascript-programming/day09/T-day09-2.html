@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+</head>
+<body>
+    <h2 class="words">Time is gold.</h2>
+    <h2 class="words">No sweat, no sweet.</h2>
+    <h2 class="words">Asking costs nothing.</h2>
+
+    <script>
+
+        // ------------------------------------------------------------------------------
+        // .words 요소들의 글자 색상을 빨간색으로 설정
+        // → 1. DOM에서 .words 요소를 표현하는 HTMLElement 객체를 탐색
+        //   2. HTMLElement 객체의 style 속성으로 HTML 요소의 글자 색상을 설정
+
+        // 1. DOM에서 .words 요소를 표현하는 HTMLElement 객체를 탐색
+        const words = document.getElementsByClassName('words');
+        // → document.getElementsByClassName 메서드는 HTMLElement 객체들의 배열,
+        //   정확히는 HTMLCollection 객체를 반환한다.
+
+        // 2. HTMLElement 객체의 style 속성으로 HTML 요소의 글자 색상을 설정
+        // → for 구문으로 배열 words의 원소, 즉 HTMLElement 객체에 차례대로 접근
+        for (let i = 0; i < words.length; i++) {
+            words[i].style.color = 'red';
+        }
+        /*
+        // 
+        lef element;
+        for (element of words) {
+            // element = words[0];
+            // element = words[1];
+            // element = words[2];
+
+            element.style.color = 'red';
+        }
+        */
+
+        // for or 구문으로 배열 words의 원소, 즉 HTMLElement 객체에 차례대로 접근
+        for ( const element of words) {
+            // const element = words[0];
+            // const element = words[1];
+            // const element = words[2];
+            element.style.color = 'red';
+        }
+    </script>
+
+    <ul id="list">
+        <li><a href="http://www.google.com">Google</a></li>
+        <li><a href="http://www.naver.com">Naver</a></li>
+        <li><a href="http://www.daum.net">Daum</a></li>
+    </ul>
+
+    <script>
+        
+        // -----------------------------------------------------------------------------------
+        // #list 요소에 있는 <a> 요소들의 내부에 텍스트 뒤에 참조 URL을 덧붙임
+        // → 1. DOM에서 <a> 요소를 표현하는 HTMLElement 객체들을 탐색
+        //   2. HTMLElement 객체의 속성이나 메서드로 HTML 요소의 href 속성 값을 참조
+        //   3. HTML 요소의 href 속성 값을 HTML 요소의 내부 텍스트 뒤에 덧붙임
+
+        // 1. DOM에서 <a> 요소를 표현하는 HTMLElement 객체들을 탐색
+        const links = document.querySelectorAll('#list > li > a');
+
+        /*
+        // for 구문으로 배열 links의 원소, 즉 HTMLElement 객체에 차례대로 접근
+        for (let i = 0; i < links.length; i ++){
+            // 2. HTMLElement 객체의 속성이나 메서드로 HTML 요소의 href 속성 값을 참조
+            // const href = links[i].getAttribute('href');
+            const herf = links[i].href;
+
+            // 3. HTML 요소의 href 속성 값을 HTML 요소의 내부 텍스트 뒤에 덧붙임
+            links[i].innerHTML += ` (${href})`; 
+        }
+        */
+
+        // for 구문으로 배열 links의 원소, 즉 HTMLElement 객체에 차례대로 접금
+        for ( const element of links) {
+            /*
+            // 2. HTMLElement 객체의 속성이나 메서드로 HTML 요소의 href 속성 값을 참조
+            const href = element.href;
+
+            // 3. HTML 요소의 href 속성 값을 HTML 요소의 내부 텍스트 뒤에 덧붙임
+            element.innerHTML += ` (${href})`;
+            */
+            // 위 두 문장을 문장 하나로 작성
+            element.innerHTML += ` (${element.herf})`;
+        }
+        
+    </script>
+    
+</body>
+</html>

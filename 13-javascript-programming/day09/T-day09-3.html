@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JavaScript Example</title>
+        <link rel="stylesheet" href="../reset.css">
+        <style>
+            #box {
+                width: 200px;
+                height: 200px;
+                background-color: #808000;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1 id="best">DO YOUR BEST!</h1>
+
+        <script>
+
+            // ----------------------------------------------------------------------------
+            // #best 요소의 글자 색상을 2초마다 빨간색, 파란색, 녹색 ,노란색으로 설정
+            // → 1. window.setInterval 메서드로 타이머를 등록
+            //   2. DOM에서 #best 요소를 표현하는 HTMLElement 객체를 탐색
+            //   3. HTMLElement 객체의 style 속성으로 글자 생상을 설정
+
+            // #best 요소의 설정할 글자 색상
+            const colors = ['red', 'blue', 'green', 'gold'];
+
+            // #best 요소에 설정할 글자 색상을 나타내는 인덱스 변수
+            // i = 0, 1, 2, 3, 0, 1, 2, ...;
+            let i = 0;
+
+
+            // 1. window.setInterval 메서드로 타이머를 등록
+            window.setInterval(function () {
+                /*
+                // 2. DOM에서 #best 요소를 표현하는 HTMLElement 객체를 탐색
+                const best = document.getElementById('best');
+                */
+
+                // 3. HTMLElement 객체의 style 속성으로 글자 생상을 설정
+                // color: red, blue, green, gold, red, blue, green, gold, red, ...;
+                // color: colors[0], colors[1], colors[2], colors[3], colors[0], ...;
+                best.style.color = colors[i];
+
+                /*
+                // 2000ms가 지난 다음, 타이머에 의해 이 함수가 다시 실행됐을 때
+                // 다음 색상을 설정하도록 인덱스 변수 i를 1만큼 증가
+                i++;
+    
+                // 인덱스 변수 i는 계속 증가하는게 아니라 0, 1, 2, 3을 반복해야한다.
+                // if (i === 4) i = 0;
+                // if (i === colors.length) i = 0;
+                i %= colors.length;
+                */
+
+                // 위 두문장을 하나로 작성
+                i = (i + 1) % colors.length
+            }, 2000);
+        </script>
+
+        <div id="box"></div>
+
+        <script>
+
+            // ----------------------------------------------------------------------------
+            // 2초후에 #box 요소를 본래 위치에서 오른쪽으로 200px 떨어진 위치로,
+            // 4초후에 #box 요소를 본래 위치에서 오른쪽으로 400px 떨어진 위치로,
+            // 6초후에 #box 요소를 본래 위치에서 오른쪽으로 600px 떨어진 위치로 이동
+            // → 1. window.setInterval 메서드로 타이머를 등록
+            //   2. DOM에서 #box 요소를 표현하는 HTMLElement 객체를 탐색
+            //   3. HTMLElement 객체의 style 속성으로 HTML 요소의 위치를 설정
+
+            // 2. DOM에서 #box 요소를 표현하는 HTMLElement 객체를 탐색
+            const box = document.getElementById('box');
+
+            // #box 요소의 margin-left 스타일 속성의 값을 계산하기 위한 인덱스 변수
+            let j = 1;
+            // 1. window.setInterval 메서드로 타이머를 등록
+            // → 나중에 타이머를 해제하기 위해 setInterval 메서드가 반환하는 값,
+            //   즉 타이머 ID를 변수에 대입해둔다.
+            const timerId = window.setInterval(function () {
+                /*
+                 * HTML 요소의 위치 이동
+                 * 1. margin 스타일 속성
+                 * 2. position 스타일 속성이 설정된 경우 top, right, bottom, left, 스타일 속성
+                 * 3. transform 스타일 속성의 translate 함수
+                 */
+                
+                // 3. HTMLElement 객체의 style 속성으로 HTML 요소의 위치를 설정
+                // margin-left: 200px, 400px, 600px;
+                // → i = 1, 2, 3;
+                box.style.marginLeft = (j * 200) + 'px';
+
+                // 2000ms가 지난 다음, 이 함수가 타이머에 의해 다시 실행됐을때,
+                // #box 요소의 margin-left 스타일 속성의 값을 계산하기 위해 변수 j를 1만큼 증가
+                j++;
+
+                // 인덱스 변수 j가 4가되면 타이머를 해제
+                if (j === 4) window.clearInterval(timerId);
+            }, 2000);
+        </script>
+    </body>
+
+</html>
