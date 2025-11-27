@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+    <link
+      rel="stylesheet"
+      href="../reset.css"
+    >
+    <style>
+      #hello, #best {
+        background-color: #444;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 id="hello">Hellow World!</h1>
+    <script>
+      const hello = document.getElementById('hello');
+
+      hello.onclick = function () {
+        this.style.display = 'none';
+      }
+
+    </script>
+
+    <h1 id="best">DO YOUR BEST!</h1>
+
+    <script>
+      const best = document.getElementById('best');
+
+      best.addEventListener('click', function () {
+        this.style.transitionDuration = '1s';
+        this.style.visibility = 'hidden';
+        this.style.opacity = '0';
+      });
+
+    </script>
+  </body>
+</html>

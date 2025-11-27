@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+        #work {
+            width: 300px;
+            /* height: 300px; */
+            border: 2px solid goldenrod;
+            background-color: #444;
+            text-align: center;
+            line-height: 300px;
+        }
+    </style>
+    <script>
+        
+        let i = 1;
+        
+        window.addEventListener('load', function () {
+            const work = document.getElementById('work');
+            const move = document.getElementById('move');
+            const reset = document.getElementById('reset');
+            move.addEventListener('click', function () {
+                work.style.transform = `translatex(${i * 200}px)`;
+                i++;
+            });
+
+            reset.addEventListener('click', function () {
+                work.removeAttribute('style');
+                i = 1;
+            })
+        });
+    </script>
+  </head>
+
+  <body>
+    
+    <h1 id="work">WORK HARD!</h1>
+    <p>
+        <button type="button" id="move">MOVE!</button>
+        <button type="button" id="reset">RESET!</button>
+    </p>
+    
+  </body>
+</html>
