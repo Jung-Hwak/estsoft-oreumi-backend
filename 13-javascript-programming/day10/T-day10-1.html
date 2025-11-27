@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+      #hello,
+      #best {
+        background-color: #444;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1 id="hello">Hellow World!</h1>
+    
+    <script>
+
+      // --------------------------------------------------------------------------
+      // #hello 요소를 클릭하면, #hello 요소가 화면에서 사라지도록 설정
+      // → 1. DOM에서 #hello 요소를 표현하는 HTMLElement 객체를 탐색
+      //   2. HTMLElement 객체의 click 이벤트 핸들러를 연결
+      //   3. #hello 요소가 화면에서 사라지도록 설정
+
+
+      // 1. DOM에서 #hello 요소를 표현하는 HTMLElement 객체를 탐색
+      const hello = document.getElementById('hello');
+
+      // 2. HTMLElement 객체의 click 이벤트 핸들러(이벤트 리스너)를 연결
+      hello.onclick = function () {
+        // 이벤트 핸들러: #hello 요소에 click 이벤트가 발생하면 실행할 기능
+
+        // 3. #hello 요소가 화면에서 사라지도록 설정
+        // display: none;
+        // hello.style.display = 'none';
+        this.style.display = 'none';
+      };
+
+    </script>
+
+    <h1 id="best">DO YOUR BEST!</h1>
+
+    <!-- 
+    <script>
+
+      // --------------------------------------------------------------------------
+      // #best 요소를 클릭하면, #best 요소가 1초에 걸쳐 점차 흐릿하게 사라지도록 설정
+      // → 1. #best 요소에 click 이벤트 핸들러를 연결
+      //   2. #best 요소가 1초에 걸쳐 점차 흐릿하게 사라지도록 설정
+
+      // 1. #best 요소에 click 이벤트 핸들러를 연결
+      document.getElementById('best').addEventListener('click', function () {
+        // 이벤트 핸들러: #best 요소에 click 이벤트가 발생하면 실행할 기능
+
+        // 2. #best 요소가 1초에 걸쳐 점차 흐릿하게 사라지도록 설정
+        // transition-duration: 1s;
+        // visibility: hidden;
+        // opacity: 0;
+        this.style.transitionDuration = '1s';
+        this.style.visibility = 'hidden';
+        this.style.opacity = '0';
+
+      });
+
+    </script> 
+    -->
+
+    <script>
+
+      // --------------------------------------------------------------------------
+      // #best 요소를 클릭하면, #best 요소가 1초에 걸쳐 점차 흐릿하게 사라지도록 설정
+      // → 1. #best 요소에 click 이벤트 핸들러를 연결
+      //   2. #best 요소가 1초에 걸쳐 점차 흐릿하게 사라지도록 설정
+
+      // #best 요소가 화면에서 사라는데 걸리는 시간
+      const duration = 1000;
+
+      // 1. #best 요소에 click 이벤트 핸들러를 연결
+      document.getElementById('best').addEventListener('click', function () {
+        // 이벤트 핸들러: #best 요소에 click 이벤트가 발생하면 실행할 기능
+
+        // 2. #best 요소가 1초에 걸쳐 점차 흐릿하게 사라지도록 설정
+        // transition-duration: 1s;
+        // visibility: hidden;
+        // opacity: 0;
+        this.style.transitionDuration = '1s';
+        this.style.opacity = '0';
+
+        // 타이머로 인해 실행되는 함수에서 #best 요소에 접근하기 위해 변수를 선언
+        const that = this;
+
+        // #best 요소가 브라우저 화면(viewport)에서 완전히 사라진 다음에 브라우저 화면에서 제거
+        window.setTimeout(function () {
+          // 이 함수는 setTimeout 메서드로 등록한 타이머에 의해 1000ms가 지난 다음에 실행
+
+          // #best 요소를 브라우저 화면에서 제거
+          // this.style.display = 'none';                      // ERROR!
+          // → this 키워드는 메서드 본체에서 사용할 수 있으며, 이 메서드에 접근하고 있는 객체를 나타낸다.
+          //   이벤트 핸들러는 이벤트 핸들러를 연결한 객체의 메서드로 실행된다. 따라서 이벤트 핸들러에서
+          //   this 키워드는 이벤트가 발생한 객체를 나타낸다.
+          //   window 객체에 의해 실행되는 이 함수에서 this는 window 객체를 나타낸다.
+          // → style 속성은 HTMLElement 객체의 속성이다. window 객체에는 style 속성이 없다.
+
+          // click 이벤트 핸들러에서 선언한 변수 that으로 #best 요소에 접근
+          that.style.display = 'none';
+
+          // #best 요소에 설정한 transition-duration 스타일 속성과 opacity 스타일 속성을 제거
+          // → 스타일 속성을 제거하기 위해 빈 문자열("")이나 null을 대입한다.
+          that.style.transitionDuration = '';
+          that.style.opacity = null;
+        }, duration);
+      });
+
+    </script>
+
+    <ul>
+        <li><a href="https://www.google.com">Google</a></li>
+        <li><a href="https://www.naver.com">Naver</a></li>
+        <li><a href="https://www.daum.net">Daum</a></li>
+        <li><a href="https://www.facebook.com">Facebook</a></li>
+        <li><a href="https://www.twitter.com">Twitter</a></li>
+    </ul>
+
+    <script>
+
+        //--------------------------------------------------------------------
+        // 1. HTML 문서에 있는 모든 링크들을 찾아
+        // 2. 그 링크를 클릭하면
+        // 3. 지정한 참조 URL로 이동하지 않도록 하고
+        // 4. window.alert 메서드로 경고 창에 참조 URL을 출력
+
+        // 1. HTML 문서에 있는 모든 링크들을 찾아
+        // → document.links 속성으로 DOM에 포함된 모든 링크에 접근
+        for (const link of document.links) {
+            // 2. 그 링크를 클릭하면
+            // → 링크를 나타내는 HTMLElement 객체에 click 이벤트 핸들러를 연결
+            link.addEventListener('click', function (event) {
+                // 이벤트 핸들러: 링크를 나타내는 요소에 click 이벤트가 발생하면 실행할 기능
+
+                // 3. 지정한 참조 URL로 이동하지 않도록 하고
+                // → 링크를 나타내는 HTMLElement 객체의 click 이벤트의 기본 이벤트를 제거
+                event.preventDefault();
+
+                // 4. window.alert 메서드로 경고 창에 참조 URL을 출력
+                window.alert(this.href);
+            });
+        }
+
+    </script>
+    <h1 id="step">Step by step goes a long way.</h1>
+
+    <p>
+        <button type="button" id="toggle">TOGGLE</button>
+    </p>
+
+    <script>
+
+        //--------------------------------------------------------------------
+        // 1. #toggle 요소를 클릭하면
+        // 2. #step 요소의 글자 색상이 설정되어 있지 않으면, 즉 글자 색상이 "red"가 아니면,
+        //    또는 #toggle 요소의 내부 텍스트가 "RESET"이 아니면, 즉 "TOGGLE"이면
+        // 2.1. #step 요소의 글자 색상을 "red"로 설정하고
+        // 2.2. #toggle 요소의 내부 텍스트를 "RESET"으로 설정한다.
+        // 3. 그렇지 않으면
+        // 3.1. #step 요소의 글자 색상을 본래대로 되돌리고
+        // 3.2. #toggle 요소의 내부 텍스트를 "TOGGLE"로 설정한다.
+
+        //--------------------------------------------------------------------
+        // 프로그램에서 참조하는 요소를 미리 탐색
+        const step = document.getElementById('step');
+
+        // 1. #toggle 요소를 클릭하면
+        document.getElementById('toggle').addEventListener('click', function () {
+            // 이벤트 핸들러: #toggle 요소에 click 이벤트가 발생하면 실행할 기능
+
+            // 2. #step 요소의 글자 색상이 설정되어 있지 않으면, 즉 글자 색상이 "red"가 아니면,
+            //    또는 #toggle 요소의 내부 텍스트가 "RESET"이 아니면, 즉 "TOGGLE"이면
+            // if (step.style.color != 'red')
+            // if (this.innerHTML === 'TOGGLE')
+            if (this.innerHTML !== 'RESET') {
+                // 2.1. #step 요소의 글자 색상을 "red"로 설정하고
+                step.style.color = 'red';
+
+                // 2.2. #toggle 요소의 내부 텍스트를 "RESET"으로 설정한다.
+                this.innerHTML = 'RESET';
+            }
+            // 3. 그렇지 않으면
+            else {
+                // 3.1. #step 요소의 글자 색상을 본래대로 되돌리고
+                // step.style.color = '';
+                // step.style.color = null;
+                step.removeAttribute('style');
+
+                // 3.2. #toggle 요소의 내부 텍스트를 "TOGGLE"로 설정한다.
+                this.innerHTML = 'TOGGLE';
+            }
+        });
+
+    </script>
+  </body>
+</html>

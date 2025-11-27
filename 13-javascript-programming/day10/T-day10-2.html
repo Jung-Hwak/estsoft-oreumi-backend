@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+        #work {
+            width: 300px;
+            /* height: 300px; */
+            border: 2px solid goldenrod;
+            background-color: #444;
+            text-align: center;
+            line-height: 300px;
+        }
+    </style>
+    <script>
+
+        window.addEventListener('load', function () {
+            // 이벤트 핸들러: window 객체에 load 이벤트가 발생하면 실행할 기능
+
+            // ---------------------------------------------------------------
+            // 1. #move 요소를 클릭하면
+            // 1.1. #work 요소를 오른쪽으로 200px만큼 이동한다.
+            // 2. #reset 요소를 클릭하면
+            // 2.1. #work 요소를 제자리로 옮긴다.
+            
+            // ---------------------------------------------------------------
+            // 프로그램에서 참조하는 요소를 미리 탐색
+            const work = document.getElementById('work');
+
+            // #work 요소에 설정할 스타일 속성의 값을 계산하기 위한 인덱스 변수
+            let i = 1;
+
+            // 1. #move 요소를 클릭하면
+            document.getElementById('move').addEventListener('click', function () {
+                /*
+                // 1.1. #work 요소를 오른쪽으로 200px만큼 이동한다.
+                // transform: translateX(200px), translateX(400px), translateX 600px), ...;
+                // i = 1, 2, 3, 4, ...;
+                work.style.transform = `translateX(${i * 200}px)`;
+
+                // 인덱스 변수 i를 증가
+                i++;
+                */
+                // 증가 연산의 후위 연산으로 위 두 문장을 한 문장으로 작성
+                work.style.transform = `translateX(${i++ * 200}px)`;
+            });
+            
+            // 2. #reset 요소를 클릭하면
+            document.getElementById('reset').addEventListener('click', function () {
+                // 2.1. #work 요소를 제자리로 옮긴다.
+                // work.style.transform = 'translateX(0)';
+                // work.style.transform = '';
+                // work.style.transform = null;
+                work.removeAttribute('style');
+
+                // 인덱스 변수 i를 초기화
+                i = 1;
+            });
+        })
+        
+        const move = document.getElementById('move');
+        const reset = document.getElementById('reset');
+
+        let i = 0;
+        move.addEventListener('click', function () {
+            work.style.transform = `ranslatex (${i * 200}) px`;
+            i++;
+        });
+
+    </script>
+  </head>
+
+  <body>
+    
+    <h1 id="work">WORK HARD!</h1>
+    <p>
+        <button type="button" id="move">MOVE!</button>
+        <button type="button" id="reset">RESET!</button>
+    </p>
+    
+  </body>
+</html>

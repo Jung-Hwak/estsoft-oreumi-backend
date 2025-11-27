@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+        #form {
+            margin-bottom: 2em;
+        }
+
+        #form > p:not(:last-child) {
+            margin-bottom: 0.6em;
+        }
+
+        #form > p >label:first-child {
+            display: inline-block;
+            width: 80px;
+            text-align: right;
+        }
+
+        #form > p > input[type="submit"] {
+            display: block;
+            width: 350px;
+            padding: 0.4em 0;
+        }
+
+        #log {
+            line-height: 1.8;
+        }
+        
+    </style>
+
+    <script>
+        
+        window.addEventListener('load', function () {
+            // 이벤트 핸들러: window 객체에 load 이벤트가 발생하면 실행할 기능
+
+            // ----------------------------------------------------------------
+            // 1. #form 요소에서 submit 이벤트가 발생하면
+            // 2. 사용자가 입력 요소에 입력한 값을 확인해서
+            // 3. 그 값을 #log 요소에 출력한다.
+
+            // ----------------------------------------------------------------
+            // 1. #form 요소에서 submit 이벤트가 발생하면
+            document.getElementById('from').addEventListener('submit', function (event) {
+                // 기본 이벤트를 제거
+                event.preventDefault();
+
+                // 2. 사용자가 입력 요소에 입력한 값을 확인해서
+                const name = this.name.value;
+                const gender = this.gender.value === 'male' ? '남자': '여자';
+                // const age = this.age.options[this.age.selectedIndex].value;
+                // → this.age 속성은 name 속성이 "age"인 <select> 요소를 표현하는 HTMLElement 객체이다.
+                // → <select> 요소를 표현하는 HTMLElement 객체의 options 속성은 <option> 요소들의 배열이다.
+                // → <select> 요소를 표현하는 HTMLElement 객체의 selectedIndex 속성은 <select> 요소에
+                //   포함된 <option> 요소들 중에서 선택한 <option> 요소의 인덱스를 나타낸다.
+                
+                const age = this.age.value;
+                // → <select> 요소를 표현하는 HTMLElement 객체의 value 속성은 <select> 요소에 포함된
+                //   <option> 요소들 중에서 선택한 <option> 요소의 value 속성을 나타낸다.
+
+                // 3. 그 값을 #log 요소에 출력한다.
+                document.getElementById('log').innerHTML = ` 반갑습니다, ${name} 님. <br>
+                    ${name} 님은 ${age} ${gender}입니다.`;
+            });
+
+        });
+    </script>
+</head>
+<body>
+    
+    <form action="/suver/progrm" method="post" id="form">
+        <p>
+            <label>이름: </label>
+            <input type="text" name="name" autocomplete="off">
+        </p>
+        <p>
+            <label>성별:</label>
+            <label><input type="radio" name="gender" value="male">남자</label>
+            <label><input type="radio" name="gender" value="female">여자</label>
+        </p>
+        <p>
+            <label>연령대:</label>
+            <select name="age">
+                <option value="10대">10대</option>
+                <option value="20대">20대</option>
+                <option value="30대">30대</option>
+                <option value="40대">40대</option>
+                <option value="50대">50대</option>
+            </select>
+        </p>
+        <p>
+            <input type="submit" value="확인">
+        </p>
+    </form>
+
+    <div id="log"></div>
+</body>
+</html>
