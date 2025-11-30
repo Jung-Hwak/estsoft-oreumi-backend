@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>25-11-28 Demo</title>
+        <link rel="stylesheet" href="reset.css">
+        <style>
+            #gallery {
+                display: flex;
+                gap: 10px;
+                list-style: none;
+            }
+
+            #gallery > li > a > img {
+                width: 200px;
+                display: block;
+                border: 4px solid white;
+            }
+
+
+            #overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+
+            #photo {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                max-width: 80%;
+                max-height: 80%;
+            }
+
+
+            #overlay, #photo {
+                visibility: hidden;
+                opacity: 0;
+                transition: opacity 400ms;
+            }
+
+
+            #overlay.on, #photo.on {
+                visibility: visible;
+                opacity: 1;
+            }
+        </style>
+
+        <script>
+            window.addEventListener("load", function () {
+                const galleryLinks = document.querySelectorAll("#gallery > li > a");
+                const overlay = document.getElementById("overlay");
+                const photo = document.getElementById("photo");
+
+                galleryLinks.forEach(link => {
+                    link.addEventListener("click", function (event) {
+                        event.preventDefault();
+                        photo.src = this.href;
+                        overlay.classList.add("on");
+                        photo.classList.add("on");
+                    });
+                });
+
+                overlay.addEventListener("click", function () {
+                    overlay.classList.remove("on");
+                    photo.classList.remove("on");
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+
+        <div id="overlay">
+
+            <img src="https://i.imgur.com/7Mu8BZg.png" alt="Photo" id="photo">
+
+        </div>  <!-- /#overlay -->
+
+        <ul id="gallery">
+            <li>
+                <a href="https://i.imgur.com/7Mu8BZg.png">
+                    <img src="https://i.imgur.com/RDQGlFG.png">
+                </a>
+            </li>
+            <li>
+                <a href="https://i.imgur.com/kwD72gU.png">
+                    <img src="https://i.imgur.com/VaVlu0Y.png">
+                </a>
+            </li>
+            <li>
+                <a href="https://i.imgur.com/qOU9yuQ.png">
+                    <img src="https://i.imgur.com/AJkIaya.png">
+                </a>
+            </li>
+            <li>
+                <a href="https://i.imgur.com/YfsvbdE.png">
+                    <img src="https://i.imgur.com/Y51UhBK.png">
+                </a>
+            </li>
+            <li>
+                <a href="https://i.imgur.com/3KWpPQv.png">
+                    <img src="https://i.imgur.com/gbPCnTb.png">
+                </a>
+            </li>
+        </ul> <!-- /#gallery -->
+
+    </body>
+</html>
