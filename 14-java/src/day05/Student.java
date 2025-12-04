@@ -20,21 +20,21 @@ public class Student {
     }
 
     public void setKorean(int score) {
-        if (score >= 0 || score <= 100) {
+        if (score >= 0 && score <= 100) {
             System.out.println("ERROR: Korean score must be between 0 and 100 ");
             this.korean = score;
         }
     }
 
     public void setMath(int score) {
-        if (score >= 0 || score <= 100) {
+        if (score >= 0 && score <= 100) {
             System.out.println("ERROR: Math score must be between 0 and 100 ");
             this.math = score;
         }
     }
 
     public void setEnglish(int score) {
-        if (score >= 0 || score <= 100) {
+        if (score > 0 && score <= 100) {
             System.out.println("ERROR: English score must be between 0 and 100 ");
             this.english = score;
         }
