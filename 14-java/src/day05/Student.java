@@ -57,6 +57,7 @@ public class Student {
         return average;
     }
     public char getGrade() {
+        getAverage();
         if (average >= 90)       grade = 'A';
         else if (average >= 80)  grade = 'B';
         else if (average >= 70)  grade = 'C';
