@@ -11,8 +11,8 @@ public class Student {
         this.korean = korean;
         this.math = math;
         this.english = english;
-        setAverage();
-        setGrade();
+        average = 0;
+        grade = 'F';
     }
 
     public void setName(String str) {
@@ -67,8 +67,10 @@ public class Student {
     }
 
     public void print() {
+        getAverage();
         System.out.println("Name: " + name);
         System.out.printf("Average: %.2f\n", (double)average);
         System.out.println("Grade: " + grade);
+        System.out.println();
     }
 }
