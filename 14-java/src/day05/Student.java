@@ -41,23 +41,29 @@ public class Student {
     }
 
     private void setAverage() {
-        this.average = (korean + math + english) / 3.0;
+        this.average = average;
     }
 
     private void setGrade() {
-        if (average >= 90)       this.grade = 'A';
-        else if (average >= 80)  this.grade = 'B';
-        else if (average >= 70)  this.grade = 'C';
-        else if (average >= 60)  this.grade = 'D';
-        else                     this.grade = 'F';
+        this.grade = grade;
     }
 
     public String getName() { return name; }
     public int getKorean() { return korean; }
     public int getMath() { return math; }
     public int getEnglish() { return english; }
-    public double getAverage() { return average; }
-    public char getGrade() { return grade; }
+    public double getAverage() {
+        average = (double)(korean + math + english) / 3;
+        return average;
+    }
+    public char getGrade() {
+        if (average >= 90)       grade = 'A';
+        else if (average >= 80)  grade = 'B';
+        else if (average >= 70)  grade = 'C';
+        else if (average >= 60)  grade = 'D';
+        else grade = 'F';
+        return grade;
+    }
 
     public void print() {
         System.out.println("Name: " + name);
