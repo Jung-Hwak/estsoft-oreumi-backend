@@ -1,9 +1,11 @@
 package com.example.step01.ex01;
 
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@WebServlet("/first")
 public class FirstServlet extends HttpServlet {
     @Override
     public void init() {

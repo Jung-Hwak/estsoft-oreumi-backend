@@ -5,16 +5,17 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>step01</artifactId>
+    <artifactId>step02</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>step01</name>
+    <name>step02</name>
     <packaging>war</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <project.reportin.outputEncoding>UTF-8</project.reportin.outputEncoding>
         <maven.compiler.target>25</maven.compiler.target>
         <maven.compiler.source>25</maven.compiler.source>
+
     </properties>
 
     <dependencies>
@@ -24,7 +25,6 @@
             <version>4.0.1</version>
             <scope>provided</scope>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
         <dependency>
             <groupId>com.h2database</groupId>
