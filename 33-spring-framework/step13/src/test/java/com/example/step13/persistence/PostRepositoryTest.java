@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
-import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -90,5 +89,23 @@ class PostRepositoryTest {
         assertNotNull(updatedEntity);
         assertEquals(title, updatedEntity.getTitle());
         log.info("updatedEntity = {}", updatedEntity);
+    }
+
+    @Test
+    public void testDelete() {
+        Long id = 13L;
+
+        final long countBefore = postRepository.count();
+        log.info("countBefore = {}", countBefore);
+
+        postRepository.findById(id).ifPresent(postEntity -> {
+            postRepository.delete(postEntity);
+            log.info("deletedEntity = {}", postEntity);
+
+            final long countAfter = postRepository.count();
+            log.info("countAfter = {}", countAfter);
+
+            assertEquals(countBefore - 1, countAfter);
+        });
     }
 }
