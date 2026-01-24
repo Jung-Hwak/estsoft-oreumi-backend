@@ -24,4 +24,8 @@ spring:
       hibernate:
         show-sql: true
         format_sql: true
-        use-sql_comments: false
+        use_sql_comments: false
+
+  thymeleaf:
+    prefix: file:src/main/resources/templates/
+    cache: false
