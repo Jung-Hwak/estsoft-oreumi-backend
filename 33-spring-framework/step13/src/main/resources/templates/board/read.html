@@ -8,9 +8,9 @@
         #container > ul { list-style-type: none; padding: 0; display: flex; gap: 50px; }
     </style>
     <script>
-        addEventListener('load', function() {
-            document.getElementById('delete')?.addEventListener('click', function(event) {
-                if (!confirm('Are you sure to delete the post?')) {
+        window.addEventListener('load', function () {
+            document.getElementById('delete')?.addEventListener('click', function (event) {
+                if (!window.confirm('Are you sure to delete the post?')) {
                     event.preventDefault();
                 }
             });
@@ -34,9 +34,9 @@
     <hr>
 
     <p>
-        [<a th:href="@{list}">List</a>]
-        [<a th:href="@{update(id=*{id})}">Update</a>]
-        [<a th:href="@{delete(id=*{id})}" id="delete">Delete</a>]
+        [<a th:href="@{list(page=${criteria.page})}">List</a>]
+        [<a th:href="@{update(id=*{id}, page=${criteria.page})}">Update</a>]
+        [<a th:href="@{delete(id=*{id}, page=${criteria.page})}" id="delete">Delete</a>]
     </p>
 </div>
 

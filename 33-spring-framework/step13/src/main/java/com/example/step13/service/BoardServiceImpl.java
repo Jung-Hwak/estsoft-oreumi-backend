@@ -5,6 +5,8 @@ import com.example.step13.domain.PostEntity;
 import com.example.step13.persistence.PostRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -94,10 +96,26 @@ public class BoardServiceImpl implements BoardService {
 
         List<PostEntity> postEntityList = postRepository.findAll();
 
+        /*
         for (PostEntity postEntity : postEntityList) {
             postDtoList.add(PostDto.from(postEntity));
         }
+        */
+
+        // postEntityList.forEach(postEntity -> { postDtoList.add(PostDto.from(postEntity)); });
+        postEntityList.forEach(postEntity -> postDtoList.add(PostDto.from(postEntity)));
 
         return postDtoList;
+    }
+
+    @Override
+    public Page<PostDto> getList(Pageable pageable) {
+        log.info("getList: pageable = {}", pageable);
+
+        Page<PostEntity> postEntityPage = postRepository.findAll(pageable);
+
+        // return postEntityPage.map(postEntity -> { return PostDto.from(postEntity); });
+        // return postEntityPage.map(postEntity -> PostDto.from(postEntity));
+        return postEntityPage.map(PostDto::from);
     }
 }

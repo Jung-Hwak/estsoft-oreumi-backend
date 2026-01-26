@@ -31,6 +31,18 @@ class BoardControllerTest {
     }
 
     @Test
+    public void testListWithPaging() throws Exception {
+        final String page = "1";
+
+        MockHttpServletRequestBuilder request = MockMvcRequestBuilders.get("/board/list")
+                .param("page", page);
+
+        mockMvc.perform(request)
+                .andExpect(status().isOk())
+                .andDo(print());
+    }
+
+    @Test
     public void testWrite() throws Exception {
         MockHttpServletRequestBuilder request = MockMvcRequestBuilders.post("/board/write")
                 .param("title", "[TEST] BoardControllerTest#testWrite")
@@ -48,6 +60,20 @@ class BoardControllerTest {
 
         MockHttpServletRequestBuilder request = MockMvcRequestBuilders.get("/board/read")
                 .param("id", id);
+
+        mockMvc.perform(request)
+                .andExpect(status().isOk())
+                .andDo(print());
+    }
+
+    @Test
+    public void testReadWithPaging() throws Exception {
+        final String id = "1620";
+        final String page = "2";
+
+        MockHttpServletRequestBuilder request = MockMvcRequestBuilders.get("/board/read")
+                .param("id", id)
+                .param("page", page);
 
         mockMvc.perform(request)
                 .andExpect(status().isOk())

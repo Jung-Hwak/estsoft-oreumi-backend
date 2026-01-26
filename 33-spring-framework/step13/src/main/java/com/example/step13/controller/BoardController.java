@@ -1,10 +1,17 @@
 package com.example.step13.controller;
 
+import com.example.step13.domain.Criteria;
+import com.example.step13.domain.Pagination;
 import com.example.step13.domain.PostDto;
 import com.example.step13.domain.ResultDto;
 import com.example.step13.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,8 +39,23 @@ class BoardController {
 
     // "/board/"와 "/board/list"로 들어온 GET 방식의 요청에 매핑
     @GetMapping({ "", "/list" })
-    public String list(Model model) {
-        model.addAttribute("postDtoList", boardService.getList());
+    public String list(Criteria criteria, Model model) {
+        log.info("list = {}", criteria);
+
+        Pageable pageable = PageRequest.of(criteria.getPage() - 1,
+                criteria.getSize(), Sort.by(Sort.Direction.DESC, "id"));
+
+        log.info("pageable = {}", pageable);
+
+        Page<PostDto> postDtoPage = boardService.getList(pageable);
+
+        Pagination pagination = Pagination.of(pageable,
+                postDtoPage.getTotalElements(), postDtoPage.getTotalPages());
+
+        log.info("pagination = {}", pagination);
+
+        model.addAttribute("postDtoList", postDtoPage);
+        model.addAttribute("pagination", pagination);
 
         return "board/list";
     }
@@ -83,8 +105,9 @@ class BoardController {
 
     // "/board/read"로 들어온 GET 방식의 요청에 매핑
     @GetMapping("/read")
-    public PostDto read(@RequestParam Long id) {
+    public PostDto read(@RequestParam Long id, Criteria criteria) {
         log.info("read = {}", id);
+        log.info("criteria = {}", criteria);
 
         return boardService.read(id);
     }

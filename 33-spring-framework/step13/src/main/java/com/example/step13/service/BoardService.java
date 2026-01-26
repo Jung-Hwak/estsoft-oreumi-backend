@@ -1,6 +1,8 @@
 package com.example.step13.service;
 
 import com.example.step13.domain.PostDto;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
@@ -42,4 +44,12 @@ public interface BoardService {
      * @return PostDto 인스턴스들을 담고 있는 List 인스턴스
      */
     List<PostDto> getList();
+
+    /**
+     * 페이징 정보로 게시물 목록을 조회
+     *
+     * @param pageable 페이징 정보
+     * @return PostDto 인스턴스들을 담고 있는 Page 인스턴스
+     */
+    Page<PostDto> getList(Pageable pageable);
 }
