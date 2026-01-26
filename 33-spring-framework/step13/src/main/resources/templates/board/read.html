@@ -7,6 +7,15 @@
         #container { width: 800px; }
         #container > ul { list-style-type: none; padding: 0; display: flex; gap: 50px; }
     </style>
+    <script>
+        addEventListener('load', function() {
+            document.getElementById('delete')?.addEventListener('click', function(event) {
+                if (!confirm('Are you sure to delete the post?')) {
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
 </head>
 <body>
 
@@ -27,7 +36,7 @@
     <p>
         [<a th:href="@{list}">List</a>]
         [<a th:href="@{update(id=*{id})}">Update</a>]
-        [<a th:href="@{delete(id=*{id})}">Delete</a>]
+        [<a th:href="@{delete(id=*{id})}" id="delete">Delete</a>]
     </p>
 </div>
 
