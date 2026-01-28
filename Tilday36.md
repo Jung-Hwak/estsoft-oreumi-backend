@@ -91,7 +91,23 @@
 
 --- 
 
-## 5. 비동기 통신과 효율적인 DOM 조작
+## 5.MockMvc 테스트
+- 요청 설정, 검증(결과 확인)
+    ```java
+    // 요청 설정
+    MockHttpServletRequestBuilder request = MockMvcRequestBuilders.post(URI) // 1. POST 요청을 생성
+                    .contentType(MediaType.APPLICATION_JSON)                // 2. 보내는 데이터의 형식을 지정
+                    .content(json);                                         // 3. 요청 바디에 JOSN 데이터를 주입
+    // 검증, 결과 확인
+    mockMvc.perform(request)
+        .andExpect(status().isOk())                     // 1. 응답 상태 코드가 200(OK)인지 확인
+        .andExpect(jsonPath("$.postId").value(POST_ID)) // 2. JSON 데이터 중 postId가 일치하는지 확인
+        .andExpect(jsonPath("$.content").exists())      // 3. content 필드가 존재하는지 확인
+        .andDo(print());                                // 4. 요청/응답 콘솔에 출력
+
+---
+
+## 6. 비동기 통신과 효율적인 DOM 조작
 - `fetch` API를 사용하여 데이터를 주고받고, 사용자 경험(UX)을 고려한 상태 관리를 수행한다.
 * **댓글 등록 및 유효성 검사**
     ```javascript
@@ -154,6 +170,7 @@
 
 * **이벤트 위임을 활용한 수정/삭제**
     ```javascript
+    // read.html
     $comments.addEventListener('click', function (event) {
                 if (!event.target || event.target === this) return;
 
@@ -198,7 +215,7 @@
 
                     $thisComment.innerHTML = `<form id="commentEditForm">
 
-# 6. Test: MockMvc를 활용한 API 검증
+# 7. Test: MockMvc를 활용한 API 검증
 - 컨트롤러가 예상한 대로 응답하고, 유효성 검사 실패 시 400 에러를 잘 던지는지 테스트
     ```java
     // CommentControllerTest.java
