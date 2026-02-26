@@ -1,7 +1,10 @@
 package com.example.step14.security.jwt;
 
+import com.example.step14.domain.JwtResponseDto;
+import com.example.step14.security.CustomUserDetails;
 import io.jsonwebtoken.Jwts;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
 import javax.crypto.SecretKey;
@@ -109,5 +112,31 @@ public class JwtProvider {
      */
     private Date getDateAfterDuration(Duration duration) {
         return new Date(new Date().getTime() + duration.toMillis());
+    }
+
+    /**
+     * Authentication의 정보로 JwtResponseDto를 생성
+     */
+    public JwtResponseDto getJwtResponseDto(Authentication authentication) {
+        // Authentication에서 CustomUserDetails를 조회
+        CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
+
+        // CustomUserDetails에서 username을 조회
+        assert userDetails != null;
+        String username = userDetails.getUsername();
+
+        // CustomUserDetails에서 사용자 권한(authority)을 조회
+        String authority = userDetails.getAuthorities().iterator().next().getAuthority();
+
+        // Access 토큰과 Refresh 토큰 발급
+        String accessToken = issueAccessToken(username, authority);
+        String refreshToken = issueRefreshToken(username);
+
+        // JwtResponseDto 생성
+        return JwtResponseDto.builder()
+                .grantType("Bearer")
+                .accessToken(accessToken)
+                .refreshToken(refreshToken)
+                .build();
     }
 }
