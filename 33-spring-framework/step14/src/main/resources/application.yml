@@ -37,3 +37,11 @@ spring:
       pageable:
         default-page-size: 10
         one-indexed-parameters: true
+
+  profiles:
+    include: secret
+
+jwt:
+  secret-key: XiPChuiCI3bK6hIr9gRQzT8j8t419tpEIdijfJJ6Wh3
+  access-token-expiration: 10m
+  refresh-token-expiration: 14d
